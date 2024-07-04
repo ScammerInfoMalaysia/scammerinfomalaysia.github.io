@@ -83,6 +83,36 @@
             border: 1px solid #d43f3a;
             margin: 10px 0;
         }
+        .tooltip {
+            position: relative;
+            display: inline-block;
+            cursor: pointer; /* Add cursor pointer to indicate interactivity */
+        }
+        .tooltip .tooltiptext {
+            visibility: hidden;
+            width: 300px;
+            background-color: #f44336;
+            color: #fff;
+            text-align: left;
+            padding: 10px;
+            border-radius: 5px;
+            position: absolute;
+            z-index: 1;
+            bottom: 125%; /* Position above the text */
+            left: 50%;
+            margin-left: -150px;
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+        .tooltip:hover .tooltiptext {
+            visibility: visible;
+            opacity: 1;
+        }
+        .info-icon {
+            margin-left: 5px;
+            color: #f44336;
+            font-size: 18px;
+        }
     </style>
 </head>
 <body>
@@ -103,8 +133,7 @@
                 <p><strong>Syarikat:</strong> MEGA MAJU RESOURCES</p>
                 <p><strong>Alamat Pejabat:</strong> No 2, Jalan Hulu Langat Jaya2, Taman Hulu Langat Jaya, Batu 9, 43200 Cheras Selangor.</p>
                 <p><strong>Email:</strong> <a href="mailto:megamajuresources313@gmail.com">megamajuresources313@gmail.com</a></p>
-                <p><strong>Bank Acc:</strong> 05101010884</p>
-                <div class="alert">❗<strong>AMARAN:</strong> 05101010884 Ada (1) Repot Telah Dibuat. Hubungi 997 (NSRC) Segera. Untuk Maklumat Lanjut Sila Berhubung Dengan Mana-mana Balai Polis Berhampiran.</div>
+                <p><strong>Bank Acc:</strong> <span class="tooltip">05101010884 <span class="info-icon">ℹ️</span><span class="tooltiptext">❕<strong>AMARAN:</strong> ❕ 05101010884 Ada (1) Repot Telah Dibuat. Hubungi 997 (NSRC) Segera. Untuk Maklumat Lanjut Sila Berhubung Dengan Mana-mana Balai Polis Berhampiran.</span></span></p>
                 <p><strong>Bank Name:</strong> Hong Leong Bank</p>
                 <p><strong>No Telefon:</strong> 011-29009151, 013-8752919, 012-9944929</p>
             </div>
@@ -165,3 +194,4 @@
     </footer>
 </body>
 </html>
+
