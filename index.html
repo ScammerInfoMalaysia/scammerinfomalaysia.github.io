@@ -79,6 +79,13 @@
             margin-top: 20px;
         }
     </style>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            var email = '&#52;&#114;&#114;&#100;&#99;&#121;&#102;&#100;&#118;&#64;&#109;&#111;&#122;&#109;&#97;&#105;&#108;&#46;&#99;&#111;&#109;';
+            var emailContainer = document.getElementById('email');
+            emailContainer.innerHTML = '<a href="mailto:' + email + '">' + email + '</a>';
+        });
+    </script>
 </head>
 <body>
     <header>
@@ -100,7 +107,7 @@
     </div>
     <footer>
         <p>&copy; 2024 Scammer Info Malaysia. Semua Hak Cipta Terpelihara.</p>
+        <p>📧 Hubungi kami di: <span id="email"></span> sekiranya terdapat maklumat yang tidak tepat atau jika anda ingin menambah kes pada laman ini. Terima kasih! 🌟</p>
     </footer>
 </body>
 </html>
-
