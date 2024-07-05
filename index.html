@@ -46,6 +46,25 @@
             flex-direction: column;
             align-items: center;
         }
+        .navbar {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        .navbar li {
+            margin: 0 15px;
+        }
+        .navbar a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: 700;
+            transition: color 0.3s ease;
+        }
+        .navbar a:hover {
+            color: #77aaff;
+        }
         header h1 {
             margin: 10px 0 0 0;
             text-transform: uppercase;
@@ -130,6 +149,10 @@
         <div class="container">
             <img src="logo.png" alt="Scammer Info Malaysia Logo">
             <h1>Scammer Info Malaysia</h1>
+            <ul class="navbar">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="faq.html">FAQ</a></li>
+            </ul>
         </div>
     </header>
     <div class="container">
