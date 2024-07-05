@@ -4,9 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Scammer Info Malaysia</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <style>
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Roboto', sans-serif;
             margin: 0;
             padding: 0;
             background-color: #f8f9fa;
@@ -31,18 +32,23 @@
         header h1 {
             margin: 10px 0 0 0;
             text-transform: uppercase;
+            letter-spacing: 2px;
         }
         header img {
             max-width: 150px;
             height: auto;
             margin-bottom: 10px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 50%;
+            transition: transform 0.3s ease;
+        }
+        header img:hover {
+            transform: scale(1.1);
         }
         .main-content {
             padding: 20px;
             background: #fff;
-            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
             margin-top: 20px;
             border-radius: 8px;
         }
@@ -55,6 +61,7 @@
         .main-content p {
             margin: 10px 0;
             line-height: 1.6;
+            color: #555;
         }
         .button {
             display: inline-block;
@@ -65,18 +72,29 @@
             background-color: #007bff;
             text-decoration: none;
             border-radius: 5px;
-            transition: background-color 0.3s ease;
+            transition: background-color 0.3s ease, transform 0.3s ease;
             margin: 10px;
         }
         .button:hover {
             background-color: #0056b3;
+            transform: translateY(-3px);
         }
         footer {
             background: #333;
             color: #fff;
             text-align: center;
-            padding: 10px 0;
+            padding: 20px 0;
             margin-top: 20px;
+        }
+        footer p {
+            margin: 5px 0;
+        }
+        a {
+            color: #007bff;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
         }
     </style>
     <script>
@@ -97,8 +115,9 @@
     <div class="container">
         <div class="main-content">
             <h2>Selamat Datang ke Scammer Info Malaysia</h2>
-            <p>Scammer Info Malaysia adalah platform untuk memberi amaran dan menyebarkan maklumat mengenai penipuan di Malaysia. Matlamat kami adalah untuk membantu orang ramai mengenal pasti dan mengelakkan diri daripada menjadi mangsa penipuan.</p>
-            <p>Klik butang di bawah untuk melihat maklumat lanjut mengenai penipu yang dikenali.</p>
+            <p>Scammer Info Malaysia adalah platform untuk memberi amaran dan menyebarkan maklumat mengenai penipuan di Malaysia.</p>
+			<p>Matlamat kami adalah untuk membantu orang ramai mengenal pasti dan mengelakkan diri daripada menjadi mangsa penipuan.</p>
+            <p>🔍 Klik butang di bawah untuk melihat maklumat lanjut mengenai penipu yang dikenali.</p>
             <a href="mmr/index.html" class="button">Kes MMR</a>
             <!-- <a href="case2/index.html" class="button">Kes Penipuan 2</a> -->
             <!-- <a href="case3/index.html" class="button">Kes Penipuan 3</a> -->
@@ -111,3 +130,4 @@
     </footer>
 </body>
 </html>
+
