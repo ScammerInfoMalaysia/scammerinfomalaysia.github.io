@@ -137,8 +137,10 @@
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             var email = '&#52;&#114;&#114;&#100;&#99;&#121;&#102;&#100;&#118;&#64;&#109;&#111;&#122;&#109;&#97;&#105;&#108;&#46;&#99;&#111;&#109;';
-            var emailContainer = document.getElementById('email');
-            emailContainer.innerHTML = '<a href="mailto:' + email + '">' + email + '</a>';
+            var emailContainer = document.querySelectorAll('#email');
+            emailContainer.forEach(function(container) {
+                container.innerHTML = '<a href="mailto:' + email + '">' + email + '</a>';
+            });
 
             var faqItems = document.querySelectorAll('.faq-item h3');
             faqItems.forEach(function(item) {
@@ -160,6 +162,7 @@
             <ul class="navbar">
                 <li><a href="index.html">Home</a></li>
                 <li><a href="faq.html">FAQ</a></li>
+                <li><a href="links.html">Pautan Penting</a></li>
             </ul>
         </div>
     </header>
@@ -193,16 +196,16 @@
             <div class="faq-item">
                 <h3>7. Bagaimana cara memastikan maklumat penipu adalah tepat?</h3>
                 <p>Pastikan anda mengumpul maklumat daripada sumber yang boleh dipercayai dan menyertakan bukti seperti dokumen rasmi, resit, dan komunikasi dengan penipu.</p>
-			</div>
+            </div>
             <div class="faq-item">
                 <h3>8. Berapa lamakah masa yang diambil untuk kes dipaparkan?</h3>
                 <p>Masa yang diambil untuk memaparkan kes boleh berbeza-beza bergantung kepada jumlah kes yang sedang diproses. Kami akan berusaha untuk memproses setiap kes secepat mungkin.</p>
             </div>
-			<div class="faq-item">
+            <div class="faq-item">
                 <h3>9. Apakah yang perlu dilakukan jika maklumat yang diberikan tidak tepat?</h3>
                 <p>Jika anda mendapati bahawa maklumat yang diberikan tidak tepat, sila hubungi kami dengan segera melalui e-mel <span id="email"></span> atau melalui pautan di laman web kami.</p>
             </div>
-			<div class="faq-item">
+            <div class="faq-item">
                 <h3>10. Bagaimana jika saya memerlukan bantuan segera?</h3>
                 <p>Jika anda memerlukan bantuan segera, sila hubungi pihak berkuasa tempatan atau balai polis terdekat. Kami juga mengesyorkan untuk menghubungi National Scam Response Center (NSRC) di 997 untuk bantuan lanjut.</p>
             </div>
@@ -214,3 +217,4 @@
     </footer>
 </body>
 </html>
+
