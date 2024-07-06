@@ -12,6 +12,9 @@
             padding: 0;
             background-color: #f8f9fa;
             color: #333;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
         }
         .container {
             width: 80%;
@@ -19,27 +22,62 @@
             overflow: hidden;
         }
         header {
-            background: #333;
+            background: rgba(0, 0, 0, 0.7);
             color: #fff;
-            padding-top: 30px;
-            min-height: 70px;
+            padding: 10px 0;
             border-bottom: #77aaff 3px solid;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .navbar {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        .navbar li {
+            margin: 0 10px;
+        }
+        .navbar a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: 700;
+            transition: color 0.3s ease;
+        }
+        .navbar a:hover {
+            color: #77aaff;
         }
         header h1 {
-            text-align: center;
-            margin: 0;
-            padding-bottom: 10px;
+            margin: 10px 0 0 0;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-size: 1.5em;
+        }
+        header img {
+            max-width: 100px;
+            height: auto;
+            margin-bottom: 5px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 50%;
+            transition: transform 0.3s ease;
+        }
+        header img:hover {
+            transform: scale(1.1);
         }
         .main-content {
             padding: 20px;
             background: #fff;
             margin-top: 20px;
-            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
         }
         .main-content h2 {
             color: #333;
             border-bottom: 2px solid #ddd;
             padding-bottom: 10px;
+            margin-bottom: 20px;
         }
         .main-content img {
             max-width: 100%;
@@ -49,11 +87,11 @@
             margin: 10px 0;
         }
         footer {
-            background: #333;
+            background: rgba(0, 0, 0, 0.7);
             color: #fff;
             text-align: center;
             padding: 10px 0;
-            margin-top: 20px;
+            margin-top: auto;
         }
         .contact-info, .scammer-info, .witness-info, .evidence-info {
             margin: 20px 0;
@@ -155,11 +193,16 @@
 <body>
     <header>
         <div class="container">
-            <h1>Peringatan Penipuan - Mega Maju Resources/MASRIZAL BIN MOHD YUSOF</h1>
+            <img src="../logo.png" alt="Scammer Info Malaysia Logo">
+            <h1>Scammer Info Malaysia</h1>
+            <ul class="navbar">
+                <li><a href="index.html">🔙 BACK</a></li>
+            </ul>
         </div>
     </header>
     <div class="container">
         <div class="main-content">
+            <h1>Pendedahan Penipuan - Mega Maju Resources / MASRIZAL BIN MOHD YUSOF</h1>
             <div class="notice">
                 <p><strong>Pemberitahuan:</strong> Laman web ini disediakan sebagai inisiatif untuk menyebarkan maklumat mengenai penipuan, dengan tujuan untuk memberi amaran dan mencegah orang ramai daripada berurusan dengan individu yang terlibat dalam penipuan ini.</p>
             </div>
@@ -168,6 +211,7 @@
             <div class="contact-info">
                 <img src="MMR-no-bg.png" alt="Logo Syarikat Penipu" style="max-width: 200px; height: auto;">
                 <p><strong>Syarikat:</strong> MEGA MAJU RESOURCES</p>
+				<p><strong>CTOS:</strong> <a href="https://businessreport.ctoscredit.com.my/oneoffreport_api/single-report/malaysia-business/003007897H/MEGA-MAJU-RESOURCES">⛓️‍💥</a></p>
                 <p><strong>Alamat Pejabat:</strong> No 2, Jalan Hulu Langat Jaya 2, Taman Hulu Langat Jaya, Batu 9, 43200 Cheras Selangor.</p>
                 <p><strong>Email:</strong> <a href="mailto:megamajuresources313@gmail.com">megamajuresources313@gmail.com</a></p>
                 <p><strong>Bank Acc:</strong> <span class="tooltip">05101010884 <span class="info-icon">ℹ️</span><span class="tooltiptext">❕<strong>AMARAN:</strong> ❕ 05101010884 Ada (1) Repot Telah Dibuat. Hubungi 997 (NSRC) Segera. Untuk Maklumat Lanjut Sila Berhubung Dengan Mana-mana Balai Polis Berhampiran.</span></span></p>
@@ -247,4 +291,3 @@
     </footer>
 </body>
 </html>
-
