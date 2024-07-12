@@ -12,6 +12,7 @@
     <link rel="manifest" href="site.webmanifest">
     <link rel="shortcut icon" href="favicon.ico">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
         body {
             font-family: 'Roboto', sans-serif;
@@ -123,8 +124,18 @@
             background-color: #0056b3;
             transform: translateY(-3px);
         }
-        .fb-page-container {
-            margin-top: 30px;
+        .social-links {
+            margin-top: 20px;
+        }
+        .social-links a {
+            margin: 0 10px;
+            color: #007bff;
+            font-size: 24px;
+            transition: color 0.3s ease, transform 0.3s ease;
+        }
+        .social-links a:hover {
+            color: #0056b3;
+            transform: translateY(-3px);
         }
         footer {
             background: rgba(0, 0, 0, 0.7);
@@ -177,23 +188,11 @@
             <p>Matlamat kami adalah untuk membantu orang ramai mengenal pasti dan mengelakkan diri daripada menjadi mangsa penipuan.</p>
             <p>🔍 Klik butang di bawah untuk melihat maklumat lanjut mengenai penipu yang dikenali.</p>
             <a href="mmr/index.html" class="button">Kes MMR</a>
-        </div>
-        <div class="fb-page-container">
-            <!-- Facebook Page Plugin -->
-            <div class="fb-page" 
-                data-href="https://www.facebook.com/profile.php?id=61562121987884" 
-                data-tabs="timeline" 
-                data-width="340" 
-                data-height="500" 
-                data-small-header="false" 
-                data-adapt-container-width="true" 
-                data-hide-cover="false" 
-                data-show-facepile="true">
-                <blockquote cite="https://www.facebook.com/profile.php?id=61562121987884" class="fb-xfbml-parse-ignore">
-                    <a href="https://www.facebook.com/profile.php?id=61562121987884">Facebook Page</a>
-                </blockquote>
+            <div class="social-links">
+                <a href="https://www.facebook.com/profile.php?id=61562121987884" target="_blank">
+                    <i class="fab fa-facebook"></i>
+                </a>
             </div>
-            <!-- End of Facebook Page Plugin -->
         </div>
     </div>
     <footer>
