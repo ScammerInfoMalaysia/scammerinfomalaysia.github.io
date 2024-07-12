@@ -11,6 +11,7 @@
     <meta property="og:url" content="https://www.scammerinfomalaysia.com/faq.html">
     <meta property="og:type" content="website">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
         body {
             font-family: 'Roboto', sans-serif;
@@ -122,6 +123,24 @@
         .faq-item.active p {
             display: block;
         }
+        .language-switcher {
+            margin-top: 20px;
+        }
+        .language-switcher button {
+            padding: 10px 20px;
+            margin: 0 5px;
+            font-size: 16px;
+            cursor: pointer;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+        .language-switcher button:hover {
+            background-color: #0056b3;
+            transform: translateY(-3px);
+        }
         footer {
             background: rgba(0, 0, 0, 0.7);
             color: #fff;
@@ -141,10 +160,22 @@
         }
     </style>
     <script>
+        function switchLanguage(lang) {
+            const elements = document.querySelectorAll('[data-lang]');
+            elements.forEach(element => {
+                if (element.getAttribute('data-lang') === lang) {
+                    element.style.display = 'block';
+                } else {
+                    element.style.display = 'none';
+                }
+            });
+        }
+
         document.addEventListener('DOMContentLoaded', function() {
+            switchLanguage('en'); // Default language
             var email = '&#52;&#114;&#114;&#100;&#99;&#121;&#102;&#100;&#118;&#64;&#109;&#111;&#122;&#109;&#97;&#105;&#108;&#46;&#99;&#111;&#109;';
-            var emailContainer = document.querySelectorAll('#email');
-            emailContainer.forEach(function(container) {
+            var emailContainers = document.querySelectorAll('.email');
+            emailContainers.forEach(function(container) {
                 container.innerHTML = '<a href="mailto:' + email + '">' + email + '</a>';
             });
 
@@ -166,61 +197,111 @@
             <img src="logo.png" alt="Scammer Info Malaysia Logo">
             <h1>Scammer Info Malaysia</h1>
             <ul class="navbar">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="faq.html">FAQ</a></li>
-                <li><a href="links.html">Pautan Penting</a></li>
+                <li><a href="index.html" data-lang="en">Home</a><a href="index.html" data-lang="ms" style="display:none;">Laman Utama</a></li>
+                <li><a href="faq.html" data-lang="en">FAQ</a><a href="faq.html" data-lang="ms" style="display:none;">Soalan Lazim</a></li>
+                <li><a href="links.html" data-lang="en">Important Links</a><a href="links.html" data-lang="ms" style="display:none;">Pautan Penting</a></li>
             </ul>
+            <div class="language-switcher">
+                <button onclick="switchLanguage('en')">English</button>
+                <button onclick="switchLanguage('ms')">Malay</button>
+            </div>
         </div>
     </header>
     <div class="container">
         <div class="main-content">
-            <h2>Frequently Asked Questions (FAQ)</h2>
-            <div class="faq-item">
-                <h3>1. Apa itu Scammer Info Malaysia?</h3>
-                <p>Scammer Info Malaysia adalah platform untuk memberi amaran dan menyebarkan atau mendedahkan maklumat mengenai penipuan di Malaysia. Matlamat kami adalah untuk membantu orang ramai mengenal pasti dan mengelakkan diri daripada menjadi mangsa penipuan.</p>
+            <div data-lang="en">
+                <h2>Frequently Asked Questions (FAQ)</h2>
+                <div class="faq-item">
+                    <h3>1. What is Scammer Info Malaysia?</h3>
+                    <p>Scammer Info Malaysia is a platform to warn and spread or disclose information about scams in Malaysia. Our goal is to help the public identify and avoid becoming victims of scams.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>2. How do I open a case?</h3>
+                    <p>To open a case, you need to gather the required information and contact us via email through the link on our website. Please ensure all provided information is accurate and complete.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>3. What are the characteristics of cases that will not be rejected for display?</h3>
+                    <p>Cases that are complete with accurate scammer information, a clear chronology, a police report, and other supporting evidence will be displayed on our site.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>4. How do I contact you to add a case?</h3>
+                    <p>You can contact us via email at <span class="email"></span> or through the link on our website.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>5. What kind of evidence is needed to open a case?</h3>
+                    <p>Required evidence includes police reports, conversation screenshots, payment receipts, and other documents that support the scam case.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>6. Can I open a case without a police report?</h3>
+                    <p>The police report is important to support your case and ensure that legal action has been taken against the scammer.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>7. How to ensure the scammer information is accurate?</h3>
+                    <p>Make sure to gather information from reliable sources and include evidence such as official documents, receipts, and communication with the scammer.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>8. How long does it take for a case to be displayed?</h3>
+                    <p>The time taken to display a case can vary depending on the number of cases being processed. We strive to process each case as quickly as possible.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>9. What should I do if the information provided is inaccurate?</h3>
+                    <p>If you find that the information provided is inaccurate, please contact us immediately via email at <span class="email"></span> or through the link on our website.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>10. What if I need urgent assistance?</h3>
+                    <p>If you need urgent assistance, please contact your local authorities or the nearest police station. We also recommend contacting the National Scam Response Center (NSRC) at 997 for further assistance.</p>
+                </div>
             </div>
-            <div class="faq-item">
-                <h3>2. Bagaimana cara membuka kes?</h3>
-                <p>Untuk membuka kes, anda perlu mengumpulkan maklumat yang diperlukan dan menghubungi kami melalui e-mel melalui pautan di laman web kami. Sila pastikan semua maklumat yang diberikan adalah tepat dan lengkap.</p>
-            </div>
-            <div class="faq-item">
-                <h3>3. Apakah ciri-ciri kes yang tidak akan ditolak untuk dipaparkan?</h3>
-                <p>Kes yang lengkap dengan maklumat penipu yang tepat, kronologi yang jelas, laporan polis, dan bukti lain yang menyokong akan dipaparkan di laman kami.</p>
-            </div>
-            <div class="faq-item">
-                <h3>4. Bagaimana cara menghubungi kami untuk menambah kes?</h3>
-                <p>Anda boleh menghubungi kami melalui e-mel di <span id="email"></span> atau melalui pautan di laman web kami.</p>
-            </div>
-            <div class="faq-item">
-                <h3>5. Apakah jenis bukti yang diperlukan untuk membuka kes?</h3>
-                <p>Bukti yang diperlukan termasuk laporan polis, screenshot perbualan, resit pembayaran, dan dokumen lain yang menyokong kes penipuan.</p>
-            </div>
-            <div class="faq-item">
-                <h3>6. Bolehkah saya membuka kes tanpa laporan polis?</h3>
-                <p>Laporan polis adalah penting untuk menyokong kes anda dan memastikan bahawa tindakan yang sah telah diambil terhadap penipu.</p>
-            </div>
-            <div class="faq-item">
-                <h3>7. Bagaimana cara memastikan maklumat penipu adalah tepat?</h3>
-                <p>Pastikan anda mengumpul maklumat daripada sumber yang boleh dipercayai dan menyertakan bukti seperti dokumen rasmi, resit, dan komunikasi dengan penipu.</p>
-            </div>
-            <div class="faq-item">
-                <h3>8. Berapa lamakah masa yang diambil untuk kes dipaparkan?</h3>
-                <p>Masa yang diambil untuk memaparkan kes boleh berbeza-beza bergantung kepada jumlah kes yang sedang diproses. Kami akan berusaha untuk memproses setiap kes secepat mungkin.</p>
-            </div>
-            <div class="faq-item">
-                <h3>9. Apakah yang perlu dilakukan jika maklumat yang diberikan tidak tepat?</h3>
-                <p>Jika anda mendapati bahawa maklumat yang diberikan tidak tepat, sila hubungi kami dengan segera melalui e-mel <span id="email"></span> atau melalui pautan di laman web kami.</p>
-            </div>
-            <div class="faq-item">
-                <h3>10. Bagaimana jika saya memerlukan bantuan segera?</h3>
-                <p>Jika anda memerlukan bantuan segera, sila hubungi pihak berkuasa tempatan atau balai polis terdekat. Kami juga mengesyorkan untuk menghubungi National Scam Response Center (NSRC) di 997 untuk bantuan lanjut.</p>
+            <div data-lang="ms" style="display:none;">
+                <h2>Soalan Lazim (FAQ)</h2>
+                <div class="faq-item">
+                    <h3>1. Apa itu Scammer Info Malaysia?</h3>
+                    <p>Scammer Info Malaysia adalah platform untuk memberi amaran dan menyebarkan atau mendedahkan maklumat mengenai penipuan di Malaysia. Matlamat kami adalah untuk membantu orang ramai mengenal pasti dan mengelakkan diri daripada menjadi mangsa penipuan.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>2. Bagaimana cara membuka kes?</h3>
+                    <p>Untuk membuka kes, anda perlu mengumpulkan maklumat yang diperlukan dan menghubungi kami melalui e-mel melalui pautan di laman web kami. Sila pastikan semua maklumat yang diberikan adalah tepat dan lengkap.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>3. Apakah ciri-ciri kes yang tidak akan ditolak untuk dipaparkan?</h3>
+                    <p>Kes yang lengkap dengan maklumat penipu yang tepat, kronologi yang jelas, laporan polis, dan bukti lain yang menyokong akan dipaparkan di laman kami.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>4. Bagaimana cara menghubungi kami untuk menambah kes?</h3>
+                    <p>Anda boleh menghubungi kami melalui e-mel di <span class="email"></span> atau melalui pautan di laman web kami.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>5. Apakah jenis bukti yang diperlukan untuk membuka kes?</h3>
+                    <p>Bukti yang diperlukan termasuk laporan polis, screenshot perbualan, resit pembayaran, dan dokumen lain yang menyokong kes penipuan.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>6. Bolehkah saya membuka kes tanpa laporan polis?</h3>
+                    <p>Laporan polis adalah penting untuk menyokong kes anda dan memastikan bahawa tindakan yang sah telah diambil terhadap penipu.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>7. Bagaimana cara memastikan maklumat penipu adalah tepat?</h3>
+                    <p>Pastikan anda mengumpul maklumat daripada sumber yang boleh dipercayai dan menyertakan bukti seperti dokumen rasmi, resit, dan komunikasi dengan penipu.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>8. Berapa lamakah masa yang diambil untuk kes dipaparkan?</h3>
+                    <p>Masa yang diambil untuk memaparkan kes boleh berbeza-beza bergantung kepada jumlah kes yang sedang diproses. Kami akan berusaha untuk memproses setiap kes secepat mungkin.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>9. Apakah yang perlu dilakukan jika maklumat yang diberikan tidak tepat?</h3>
+                    <p>Jika anda mendapati bahawa maklumat yang diberikan tidak tepat, sila hubungi kami dengan segera melalui e-mel di <span class="email"></span> atau melalui pautan di laman web kami.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>10. Bagaimana jika saya memerlukan bantuan segera?</h3>
+                    <p>Jika anda memerlukan bantuan segera, sila hubungi pihak berkuasa tempatan atau balai polis terdekat. Kami juga mengesyorkan untuk menghubungi National Scam Response Center (NSRC) di 997 untuk bantuan lanjut.</p>
+                </div>
             </div>
         </div>
     </div>
     <footer>
-        <p>&copy; 2024 Scammer Info Malaysia. Semua Hak Cipta Terpelihara.</p>
-        <p>📧 Hubungi kami di: <span id="email"></span> sekiranya terdapat maklumat yang tidak tepat atau jika anda ingin menambah kes pada laman ini. Terima kasih! 🌟</p>
+        <p data-lang="en">&copy; 2024 Scammer Info Malaysia. All Rights Reserved.</p>
+        <p data-lang="ms" style="display:none;">&copy; 2024 Scammer Info Malaysia. Semua Hak Cipta Terpelihara.</p>
+        <p data-lang="en">📧 Contact us at: <span class="email"></span> if there is any inaccurate information or if you want to add cases to this site. Thank you! 🌟</p>
+        <p data-lang="ms" style="display:none;">📧 Hubungi kami di: <span class="email"></span> sekiranya terdapat maklumat yang tidak tepat atau jika anda ingin menambah kes pada laman ini. Terima kasih! 🌟</p>
     </footer>
 </body>
 </html>
-
