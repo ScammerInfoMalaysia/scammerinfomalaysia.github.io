@@ -137,6 +137,24 @@
             color: #0056b3;
             transform: translateY(-3px);
         }
+        .language-switcher {
+            margin-top: 20px;
+        }
+        .language-switcher button {
+            padding: 10px 20px;
+            margin: 0 5px;
+            font-size: 16px;
+            cursor: pointer;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+        .language-switcher button:hover {
+            background-color: #0056b3;
+            transform: translateY(-3px);
+        }
         footer {
             background: rgba(0, 0, 0, 0.7);
             color: #fff;
@@ -156,10 +174,24 @@
         }
     </style>
     <script>
+        function switchLanguage(lang) {
+            const elements = document.querySelectorAll('[data-lang]');
+            elements.forEach(element => {
+                if (element.getAttribute('data-lang') === lang) {
+                    element.style.display = 'block';
+                } else {
+                    element.style.display = 'none';
+                }
+            });
+        }
+
         document.addEventListener('DOMContentLoaded', function() {
+            switchLanguage('en'); // Default language
             var email = '&#52;&#114;&#114;&#100;&#99;&#121;&#102;&#100;&#118;&#64;&#109;&#111;&#122;&#109;&#97;&#105;&#108;&#46;&#99;&#111;&#109;';
-            var emailContainer = document.getElementById('email');
-            emailContainer.innerHTML = '<a href="mailto:' + email + '">' + email + '</a>';
+            var emailContainers = document.querySelectorAll('.email');
+            emailContainers.forEach(function(container) {
+                container.innerHTML = '<a href="mailto:' + email + '">' + email + '</a>';
+            });
         });
     </script>
 </head>
@@ -175,19 +207,32 @@
             <img src="logo.png" alt="Scammer Info Malaysia Logo">
             <h1>Scammer Info Malaysia</h1>
             <ul class="navbar">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="faq.html">FAQ</a></li>
-                <li><a href="links.html">Pautan Penting</a></li>
+                <li><a href="index.html" data-lang="en">Home</a><a href="index.html" data-lang="ms" style="display:none;">Laman Utama</a></li>
+                <li><a href="faq.html" data-lang="en">FAQ</a><a href="faq.html" data-lang="ms" style="display:none;">Soalan Lazim</a></li>
+                <li><a href="links.html" data-lang="en">Important Links</a><a href="links.html" data-lang="ms" style="display:none;">Pautan Penting</a></li>
             </ul>
+            <div class="language-switcher">
+                <button onclick="switchLanguage('en')">English</button>
+                <button onclick="switchLanguage('ms')">Malay</button>
+            </div>
         </div>
     </header>
     <div class="container">
         <div class="main-content">
-            <h2>Selamat Datang ke Scammer Info Malaysia</h2>
-            <p>Scammer Info Malaysia adalah platform untuk memberi amaran dan menyebarkan maklumat mengenai penipuan di Malaysia.</p>
-            <p>Matlamat kami adalah untuk membantu orang ramai mengenal pasti dan mengelakkan diri daripada menjadi mangsa penipuan.</p>
-            <p>🔍 Klik butang di bawah untuk melihat maklumat lanjut mengenai penipu yang dikenali.</p>
-            <a href="mmr/index.html" class="button">Kes MMR</a>
+            <div data-lang="en">
+                <h2>Welcome to Scammer Info Malaysia</h2>
+                <p>Scammer Info Malaysia is a platform dedicated to warning and spreading information about scams in Malaysia.</p>
+                <p>Our goal is to help people identify and avoid becoming victims of scams.</p>
+                <p>🔍 Click the button below to view more information about known scammers.</p>
+                <a href="mmr/index.html" class="button">MMR Cases</a>
+            </div>
+            <div data-lang="ms" style="display:none;">
+                <h2>Selamat Datang ke Scammer Info Malaysia</h2>
+                <p>Scammer Info Malaysia adalah platform untuk memberi amaran dan menyebarkan maklumat mengenai penipuan di Malaysia.</p>
+                <p>Matlamat kami adalah untuk membantu orang ramai mengenal pasti dan mengelakkan diri daripada menjadi mangsa penipuan.</p>
+                <p>🔍 Klik butang di bawah untuk melihat maklumat lanjut mengenai penipu yang dikenali.</p>
+                <a href="mmr/index.html" class="button">Kes MMR</a>
+            </div>
             <div class="social-links">
                 <a href="https://www.facebook.com/profile.php?id=61562121987884" target="_blank">
                     <i class="fab fa-facebook"></i>
@@ -196,8 +241,10 @@
         </div>
     </div>
     <footer>
-        <p>&copy; 2024 Scammer Info Malaysia. Semua Hak Cipta Terpelihara.</p>
-        <p>📧 Hubungi kami di: <span id="email"></span> sekiranya terdapat maklumat yang tidak tepat atau jika anda ingin menambah kes pada laman ini. Terima kasih! 🌟</p>
+        <p data-lang="en">&copy; 2024 Scammer Info Malaysia. All Rights Reserved.</p>
+        <p data-lang="ms" style="display:none;">&copy; 2024 Scammer Info Malaysia. Semua Hak Cipta Terpelihara.</p>
+        <p data-lang="en">📧 Contact us at: <span class="email"></span> if there is any inaccurate information or if you want to add cases to this site. Thank you! 🌟</p>
+        <p data-lang="ms" style="display:none;">📧 Hubungi kami di: <span class="email"></span> sekiranya terdapat maklumat yang tidak tepat atau jika anda ingin menambah kes pada laman ini. Terima kasih! 🌟</p>
     </footer>
 </body>
 </html>
