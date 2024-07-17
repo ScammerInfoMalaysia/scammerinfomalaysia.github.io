@@ -38,6 +38,7 @@
         }
         .table-container {
             margin-top: 20px;
+            overflow-x: auto; /* Added for horizontal scrolling */
         }
         .table-container table {
             width: 100%;
@@ -65,10 +66,13 @@
         }
         .table-container ul li {
             margin: 5px 0;
+            word-wrap: break-word; /* Added for word wrapping */
         }
         .table-container ul li a {
             text-decoration: none;
             color: #007bff;
+            font-size: 14px; /* Adjusted for better readability on mobile */
+            word-break: break-all; /* Added to ensure long URLs break within the container */
         }
         .table-container ul li a:hover {
             text-decoration: underline;
@@ -268,7 +272,24 @@
             background-color: #0056b3;
             transform: translateY(-3px);
         }
-    </style>
+        
+        /* Media Queries for Responsiveness */
+        @media (max-width: 600px) {
+            .table-container th, .table-container td {
+                padding: 5px;
+                font-size: 12px;
+            }
+            .table-container p {
+                font-size: 14px;
+                margin: 5px 0;
+            }
+            .table-container ul li a {
+                font-size: 12px;
+                word-wrap: break-word; /* Added for word wrapping */
+                word-break: break-all; /* Ensure long URLs break within the container */
+            }
+        }
+        </style>
     <script>
         function switchLanguage(lang) {
             const elements = document.querySelectorAll('[data-lang]');
