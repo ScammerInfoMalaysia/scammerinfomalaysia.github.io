@@ -36,6 +36,41 @@
             object-fit: cover;
             z-index: 0;
         }
+        .table-container {
+            margin-top: 20px;
+        }
+        .table-container table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        .table-container th, .table-container td {
+            border: none;
+            padding: 10px;
+            text-align: left;
+        }
+        .table-container th {
+            background-color: #f8f8f8;
+        }
+        .table-container td {
+            background-color: #fff;
+        }
+        .table-container p {
+            margin: 10px 0 0 0;
+        }
+        .table-container ul {
+            list-style: none;
+            padding-left: 0;
+        }
+        .table-container ul li {
+            margin: 5px 0;
+        }
+        .table-container ul li a {
+            text-decoration: none;
+            color: #007bff;
+        }
+        .table-container ul li a:hover {
+            text-decoration: underline;
+        }
         .container {
             width: 80%;
             margin: auto;
@@ -231,26 +266,6 @@
             background-color: #0056b3;
             transform: translateY(-3px);
         }
-        /* Scroll to top button styles */
-        #scrollToTopBtn {
-            display: none; /* Hidden by default */
-            position: fixed;
-            bottom: 20px;
-            right: 30px;
-            z-index: 99;
-            font-size: 18px;
-            border: none;
-            outline: none;
-            background-color: #000;
-            color: white;
-            cursor: pointer;
-            padding: 15px;
-            border-radius: 10px;
-        }
-
-        #scrollToTopBtn:hover {
-            background-color: #555;
-        }
     </style>
     <script>
         function switchLanguage(lang) {
@@ -270,23 +285,6 @@
             var emailContainers = document.querySelectorAll('.email');
             emailContainers.forEach(function(container) {
                 container.innerHTML = '<a href="mailto:' + email + '">' + email + '</a>';
-            });
-        });
-
-        // Scroll to top button functionality
-        document.addEventListener('scroll', function() {
-            let scrollToTopBtn = document.getElementById("scrollToTopBtn");
-            if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight) {
-                scrollToTopBtn.style.display = "block";
-            } else {
-                scrollToTopBtn.style.display = "none";
-            }
-        });
-
-        document.addEventListener('DOMContentLoaded', function() {
-            let scrollToTopBtn = document.getElementById("scrollToTopBtn");
-            scrollToTopBtn.addEventListener("click", function() {
-                window.scrollTo({ top: 0, behavior: 'smooth' });
             });
         });
     </script>
@@ -318,6 +316,26 @@
                     <img src="MMR-no-bg.png" alt="Fraud Company Logo" style="max-width: 200px; height: auto;">
                     <p><strong>Company:</strong> MEGA MAJU RESOURCES</p>
                     <p><strong>CTOS:</strong> <a href="https://businessreport.ctoscredit.com.my/oneoffreport_api/single-report/malaysia-business/003007897H/MEGA-MAJU-RESOURCES" target="_blank" rel="noopener noreferrer">⛓️‍💥</a></p>
+                    <div class="table-container">
+                        <table>
+                            <tr>
+                                <th>Registration Number</th>
+                                <th>New Registration Number</th>
+                                <th>Entity Type</th>
+                                <th>Status</th>
+                                <th>GST Number</th>
+                            </tr>
+                            <tr>
+                                <td>003007897-H</td>
+                                <td>201903229329</td>
+                                <td>MEGA MAJU RESOURCES</td>
+                                <td><b>EXPIRED</b></td>
+                                <td></td>
+                            </tr>
+                        </table>
+                        <p>As at : 17/07/2024<br>
+                        GST No. as at: 31/01/2016</p>
+                    </div>
                     <p><strong>Office Address:</strong> No 2, Jalan Hulu Langat Jaya 2, Taman Hulu Langat Jaya, Batu 9, 43200 Cheras Selangor.</p>
                     <p><strong>Email:</strong> <a href="mailto:megamajuresources313@gmail.com">megamajuresources313@gmail.com</a></p>
                     <p><strong>Bank Acc:</strong> <span class="tooltip">05101010884 <span class="info-icon">ℹ️</span><span class="tooltiptext">❕<strong>WARNING:</strong> ❕ 05101010884 has (1) report filed. Contact 997 (NSRC) immediately. For more information, please contact any nearest police station.</span></span></p>
@@ -406,6 +424,26 @@
                     <img src="MMR-no-bg.png" alt="Logo Syarikat Penipu" style="max-width: 200px; height: auto;">
                     <p><strong>Syarikat:</strong> MEGA MAJU RESOURCES</p>
                     <p><strong>CTOS:</strong> <a href="https://businessreport.ctoscredit.com.my/oneoffreport_api/single-report/malaysia-business/003007897H/MEGA-MAJU-RESOURCES" target="_blank" rel="noopener noreferrer">⛓️‍💥</a></p>
+                    <div class="table-container">
+                        <table>
+                            <tr>
+                                <th>Nombor Pendaftaran</th>
+                                <th>Nombor Pendaftaran Baru</th>
+                                <th>Jenis Entiti</th>
+                                <th>Status</th>
+                                <th>Nombor GST</th>
+                            </tr>
+                            <tr>
+                                <td>003007897-H</td>
+                                <td>201903229329</td>
+                                <td>MEGA MAJU RESOURCES</td>
+                                <td><b>TAMAT TEMPOH</b></td>
+                                <td></td>
+                            </tr>
+                        </table>
+                        <p>Setakat : 17/07/2024<br>
+                        No. GST setakat: 31/01/2016</p>
+                    </div>
                     <p><strong>Alamat Pejabat:</strong> No 2, Jalan Hulu Langat Jaya 2, Taman Hulu Langat Jaya, Batu 9, 43200 Cheras Selangor.</p>
                     <p><strong>Email:</strong> <a href="mailto:megamajuresources313@gmail.com">megamajuresources313@gmail.com</a></p>
                     <p><strong>Bank Acc:</strong> <span class="tooltip">05101010884 <span class="info-icon">ℹ️</span><span class="tooltiptext">❕<strong>AMARAN:</strong> ❕ 05101010884 Ada (1) Repot Telah Dibuat. Hubungi 997 (NSRC) Segera. Untuk Maklumat Lanjut Sila Berhubung Dengan Mana-mana Balai Polis Berhampiran.</span></span></p>
@@ -491,7 +529,5 @@
         <p data-lang="en">📧 Contact us at: <span class="email"></span> if there is any inaccurate information or if you want to add cases to this site. Thank you! 🌟</p>
         <p data-lang="ms" style="display:none;">📧 Hubungi kami di: <span class="email"></span> sekiranya terdapat maklumat yang tidak tepat atau jika anda ingin menambah kes pada laman ini. Terima kasih! 🌟</p>
     </footer>
-    <button id="scrollToTopBtn" title="Go to top">⬆️</button>
 </body>
 </html>
-
