@@ -184,6 +184,7 @@
             margin-top: 30px;
         }
         .folder {
+            position: relative; /* Add this line */
             width: 200px;
             margin: 10px;
             padding: 20px;
@@ -208,6 +209,15 @@
             margin: 10px 0;
             font-size: 1.2em;
             color: #333;
+        }
+        .update-dot {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            width: 10px;
+            height: 10px;
+            background-color: red;
+            border-radius: 50%;
         }
         .online-users {
             margin-top: 20px;
@@ -302,6 +312,7 @@
             <div class="folders">
                 <div class="folder" onclick="window.location.href='mmr/index.html'">
                     <i class="fas fa-folder folder-icon"></i>
+					<span class="update-dot"></span>
                     <h3 data-lang="en">Case 1: Mega Maju Resources</h3>
                     <h3 data-lang="ms" style="display:none;">Kes 1: Mega Maju Resources</h3>
                 </div>
@@ -338,4 +349,3 @@
     </footer>
 </body>
 </html>
-
