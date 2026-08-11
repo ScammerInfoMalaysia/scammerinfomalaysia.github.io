@@ -1,308 +1,330 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FAQ - Scammer Info Malaysia</title>
-    <meta name="description" content="Frequently Asked Questions (FAQ) about Scammer Info Malaysia. Learn more about how to identify scams, report them, and stay safe.">
-    <meta property="og:title" content="FAQ - Scammer Info Malaysia">
-    <meta property="og:description" content="Frequently Asked Questions (FAQ) about Scammer Info Malaysia. Learn more about how to identify scams, report them, and stay safe.">
-    <meta property="og:image" content="logo.webp">
-    <meta property="og:url" content="https://www.scammerinfomalaysia.com/faq.html">
-    <meta property="og:type" content="website">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <style>
-        body {
-            font-family: 'Roboto', sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f8f9fa;
-            color: #333;
-            display: flex;
-            flex-direction: column;
-            min-height: 100vh;
-        }
-        header, .main-content, footer {
-            position: relative;
-            z-index: 1;
-        }
-        .video-background {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            z-index: 0;
-        }
-        .container {
-            width: 80%;
-            margin: auto;
-            text-align: center;
-            padding: 20px 0;
-            flex: 1;
-            position: relative;
-        }
-        header {
-            background: rgba(0, 0, 0, 0.7);
-            color: #fff;
-            padding: 10px 0;
-            border-bottom: #77aaff 3px solid;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-        .navbar {
-            display: flex;
-            justify-content: center;
-            list-style: none;
-            padding: 0;
-            margin: 0;
-        }
-        .navbar li {
-            margin: 0 10px;
-        }
-        .navbar a {
-            color: #fff;
-            text-decoration: none;
-            font-weight: 700;
-            transition: color 0.3s ease;
-        }
-        .navbar a:hover {
-            color: #77aaff;
-        }
-        header h1 {
-            margin: 1px 0 0 0;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            font-size: 1.5em;
-        }
-        header img {
-            max-width: 100px;
-            height: auto;
-            margin-bottom: 5px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            border-radius: 50%;
-            transition: transform 0.3s ease;
-        }
-        header img:hover {
-            transform: scale(1.1);
-        }
-        .main-content {
-            padding: 20px;
-            background: rgba(255, 255, 255, 0.8);
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            margin-top: 10px;
-            border-radius: 8px;
-            text-align: left;
-        }
-        .main-content h2 {
-            color: #333;
-            border-bottom: 2px solid #ddd;
-            padding-bottom: 10px;
-            margin-bottom: 20px;
-        }
-        .main-content p {
-            margin: 10px 0;
-            line-height: 1.6;
-            color: #555;
-        }
-        .faq-item {
-            margin-bottom: 20px;
-        }
-        .faq-item h3 {
-            margin: 0 0 10px;
-            color: #007bff;
-            cursor: pointer;
-        }
-        .faq-item p {
-            margin: 0;
-            display: none;
-        }
-        .faq-item.active p {
-            display: block;
-        }
-        .language-switcher {
-            margin-top: 20px;
-        }
-        .language-switcher button {
-            padding: 10px 20px;
-            margin: 0 5px;
-            font-size: 16px;
-            cursor: pointer;
-            background-color: #007bff;
-            color: #fff;
-            border: none;
-            border-radius: 5px;
-            transition: background-color 0.3s ease, transform 0.3s ease;
-        }
-        .language-switcher button:hover {
-            background-color: #0056b3;
-            transform: translateY(-3px);
-        }
-        footer {
-            background: rgba(0, 0, 0, 0.7);
-            color: #fff;
-            text-align: center;
-            padding: 1px 0;
-            margin-top: 10px;
-        }
-        footer p {
-            margin: 5px 0;
-        }
-        a {
-            color: #007bff;
-            text-decoration: none;
-        }
-        a:hover {
-            text-decoration: underline;
-        }
-    </style>
-    <script>
-        function switchLanguage(lang) {
-            const elements = document.querySelectorAll('[data-lang]');
-            elements.forEach(element => {
-                if (element.getAttribute('data-lang') === lang) {
-                    element.style.display = 'block';
-                } else {
-                    element.style.display = 'none';
-                }
-            });
-        }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-        document.addEventListener('DOMContentLoaded', function() {
-            switchLanguage('en'); // Default language
-            var email = '&#52;&#114;&#114;&#100;&#99;&#121;&#102;&#100;&#118;&#64;&#109;&#111;&#122;&#109;&#97;&#105;&#108;&#46;&#99;&#111;&#109;';
-            var emailContainers = document.querySelectorAll('.email');
-            emailContainers.forEach(function(container) {
-                container.innerHTML = '<a href="mailto:' + email + '">' + email + '</a>';
-            });
+<!-- Language bootstrap. Runs before first paint so a visitor who chose BM
+     never sees the English source text flash on a page change. -->
+<script>
+(function () {
+  var l;
+  try { l = localStorage.getItem("sim-lang"); } catch (e) { /* private mode */ }
+  if (l !== "en" && l !== "ms") {
+    var n = (navigator.language || "en").toLowerCase();
+    l = (n.indexOf("ms") === 0 || n.indexOf("id") === 0) ? "ms" : "en";
+  }
+  var d = document.documentElement;
+  d.lang = l;
+  d.setAttribute("data-lang", l);
+  if (l !== "en") {
+    d.classList.add("i18n-pending");
+    setTimeout(function () { d.classList.remove("i18n-pending"); }, 1500);
+  }
+})();
+</script>
 
-            var faqItems = document.querySelectorAll('.faq-item h3');
-            faqItems.forEach(function(item) {
-                item.addEventListener('click', function() {
-                    this.parentElement.classList.toggle('active');
-                });
-            });
-        });
-    </script>
+<title>FAQ — Scammer Info Malaysia</title>
+<meta name="description" content="How Scammer Info Malaysia works: why there is only one case, what evidence a case needs, how victim details are protected, and how to request a correction or a right of reply.">
+<meta name="theme-color" content="#070b14">
+
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Scammer Info Malaysia">
+<meta property="og:title" content="FAQ — Scammer Info Malaysia">
+<meta property="og:description" content="Why there is only one case, what evidence is required, and how to request a correction or a right of reply.">
+<meta property="og:image" content="https://www.scammerinfomalaysia.com/logo.webp">
+<meta property="og:url" content="https://www.scammerinfomalaysia.com/faq.html">
+
+<link rel="canonical" href="https://www.scammerinfomalaysia.com/faq.html">
+<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+<link rel="manifest" href="site.webmanifest">
+<link rel="shortcut icon" href="favicon.ico">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap">
+<link rel="stylesheet" href="assets/css/site.css">
+
+<script>
+window.PAGE_I18N = {
+  en: {
+    "page.title": "FAQ — Scammer Info Malaysia",
+    "p.eyebrow": "Questions & answers",
+    "p.h1": "How this site works",
+    "p.lead": "Ten questions, grouped. What this site is and is not, what a case needs before it is published, how a victim's details are protected, and how to ask for a correction or a right of reply.",
+
+    "g.about": "About this site",
+    "g.submit": "Submitting a case",
+    "g.correct": "Corrections & right of reply",
+    "g.help": "If it has already happened",
+
+    "q1": "What is Scammer Info Malaysia?",
+    "a1": "A public-interest record of fraud in Malaysia. Instead of listing many unverified reports, this site publishes the complete evidence file behind one documented case — the documents, the receipts and the full chat history — so you can check the record yourself rather than take our word for it.",
+
+    "q2": "Why is there only one case?",
+    "a2": "Because a case is only published once it is fully documented. One case backed by a police report, bank receipts, signed documents and 95 chat screenshots is more use to a reader than a long list of claims nobody can verify. If a second case ever meets that standard, it will be added.",
+
+    "q3": "Are you the police? Can you get my money back?",
+    "a3": "No, on both counts. This is an independently run site, not a government agency. We have no enforcement powers, we cannot freeze accounts and we cannot recover money for you. Only the police, the National Scam Response Centre and your own bank can act on your funds — contact them first, and quickly. Nothing on this site is a paid service.",
+
+    "q4": "How do I submit a case?",
+    "a4": "Email us with your evidence attached. Set out what was promised, what you paid and when, and who you dealt with. The more complete that first email is, the faster it can be assessed. Anything we cannot verify is not published.",
+
+    "q5": "What evidence do I need?",
+    "a5": "Work from primary sources — things you actually hold, not second-hand accounts. In practice: a police report; bank transfer receipts with dates and reference numbers; the full chat history rather than a few selected screenshots; every document you signed or received; and the other party's account number, phone number and company registration number. A clear written chronology tying those together is what makes a case checkable.",
+
+    "q6": "Do I need a police report?",
+    "a6": "Yes. A report is what shows the matter has been raised formally, and it is the difference between a documented case and an anonymous accusation. Make the report first, then send it to us with the rest of your evidence.",
+
+    "q7": "Will my name be published if I submit a case?",
+    "a7": "No. Victims are not named. In the case published here, every victim detail inside the attached documents was blacked out before upload — names, addresses, account numbers — and only the other party's information is shown. If you send us documents, tell us anything you specifically want removed and the redactions will be confirmed with you before anything goes live.",
+
+    "q8": "Something here is inaccurate. How do I get it corrected?",
+    "a8": "Email us and say exactly which detail is wrong and what it should be. If you can attach something that shows it — an official document, a screenshot, a bank record — it will be dealt with faster. Verified corrections are made as soon as they can be confirmed.",
+
+    "q9": "I am named on this site. What are my options?",
+    "a9": "Write to us. If you are one of the parties named here and you believe the record is wrong, send your account of it together with anything that supports your side — a receipt, a completion certificate, an approval letter, a bank record. Where the evidence shows we are wrong, a correction is published. If you ask, your reply will be published alongside the case. Requests to remove material that is accurate and evidenced will not be granted, but every request is answered.",
+
+    "q10": "I need help now.",
+    "a10": "Call the National Scam Response Centre on 997 — the line is open 24 hours, and the sooner a bank is notified the better the chance of holding the money. Then make a police report at your nearest station. Before any further payment, check the account number and phone number on Semak Mule.",
+
+    "cta.h": "Still need to reach us?",
+    "cta.p": "Email is the only channel, and it is read. Please include as much supporting detail as you can in the first message.",
+    "cta.b": "See official reporting channels"
+  },
+  ms: {
+    "page.title": "Soalan Lazim — Scammer Info Malaysia",
+    "p.eyebrow": "Soalan & jawapan",
+    "p.h1": "Bagaimana laman ini berfungsi",
+    "p.lead": "Sepuluh soalan, disusun mengikut kumpulan. Apa laman ini dan apa ia bukan, apa yang diperlukan sebelum sesuatu kes diterbitkan, bagaimana butiran mangsa dilindungi, dan cara meminta pembetulan atau hak menjawab.",
+
+    "g.about": "Tentang laman ini",
+    "g.submit": "Menghantar kes",
+    "g.correct": "Pembetulan & hak menjawab",
+    "g.help": "Jika ia sudah berlaku",
+
+    "q1": "Apa itu Scammer Info Malaysia?",
+    "a1": "Rekod kepentingan awam mengenai penipuan di Malaysia. Daripada menyenaraikan banyak laporan yang tidak disahkan, laman ini menerbitkan fail bukti lengkap bagi satu kes yang didokumentasi — dokumennya, resitnya dan sejarah perbualan penuh — supaya anda boleh menyemak sendiri rekod itu, bukan sekadar mempercayai kata kami.",
+
+    "q2": "Kenapa hanya ada satu kes?",
+    "a2": "Kerana sesuatu kes hanya diterbitkan setelah ia didokumentasi sepenuhnya. Satu kes yang disokong laporan polis, resit bank, dokumen bertandatangan dan 95 tangkapan skrin perbualan lebih berguna kepada pembaca berbanding senarai panjang dakwaan yang tiada siapa boleh sahkan. Jika ada kes kedua yang memenuhi standard itu, ia akan ditambah.",
+
+    "q3": "Adakah anda pihak polis? Boleh anda dapatkan balik wang saya?",
+    "a3": "Tidak, kedua-duanya. Ini laman yang dikendalikan secara bebas, bukan agensi kerajaan. Kami tiada kuasa penguatkuasaan, tidak boleh membekukan akaun dan tidak boleh mendapatkan kembali wang anda. Hanya pihak polis, Pusat Respons Penipuan Nasional dan bank anda sendiri boleh bertindak terhadap wang tersebut — hubungi mereka dahulu, dan dengan segera. Tiada apa-apa di laman ini yang merupakan perkhidmatan berbayar.",
+
+    "q4": "Bagaimana cara menghantar kes?",
+    "a4": "E-mel kami dengan bukti anda dilampirkan. Nyatakan apa yang dijanjikan, apa yang anda bayar dan bila, serta dengan siapa anda berurusan. Semakin lengkap e-mel pertama itu, semakin cepat ia boleh dinilai. Apa yang tidak dapat kami sahkan tidak akan diterbitkan.",
+
+    "q5": "Apakah bukti yang diperlukan?",
+    "a5": "Gunakan sumber utama — perkara yang benar-benar anda pegang, bukan cerita orang ketiga. Dalam praktiknya: laporan polis; resit pindahan bank lengkap dengan tarikh dan nombor rujukan; sejarah perbualan penuh dan bukan beberapa tangkapan skrin terpilih; setiap dokumen yang anda tandatangani atau terima; serta nombor akaun, nombor telefon dan nombor pendaftaran syarikat pihak berkenaan. Kronologi bertulis yang jelas menghubungkan kesemuanya itulah yang menjadikan sesuatu kes boleh disemak.",
+
+    "q6": "Perlukah laporan polis?",
+    "a6": "Ya. Laporan itulah yang menunjukkan perkara ini telah dibangkitkan secara rasmi, dan itulah bezanya antara kes yang didokumentasi dengan tuduhan tanpa nama. Buat laporan dahulu, kemudian hantarkan kepada kami bersama bukti anda yang lain.",
+
+    "q7": "Adakah nama saya akan dipaparkan jika saya menghantar kes?",
+    "a7": "Tidak. Mangsa tidak dinamakan. Dalam kes yang diterbitkan di sini, setiap butiran mangsa di dalam dokumen yang dilampirkan telah dipadamkan sebelum dimuat naik — nama, alamat, nombor akaun — dan hanya maklumat pihak berkenaan yang dipaparkan. Jika anda menghantar dokumen kepada kami, beritahu apa-apa yang anda khusus mahu dibuang, dan penapisan itu akan disahkan dengan anda sebelum apa-apa disiarkan.",
+
+    "q8": "Ada maklumat tidak tepat di sini. Bagaimana untuk membetulkannya?",
+    "a8": "E-mel kami dan nyatakan dengan tepat butiran mana yang salah dan apa yang sepatutnya. Jika anda boleh lampirkan sesuatu yang menunjukkannya — dokumen rasmi, tangkapan skrin, rekod bank — ia akan diuruskan dengan lebih cepat. Pembetulan yang disahkan akan dibuat sebaik sahaja ia dapat dipastikan.",
+
+    "q9": "Nama saya tersenarai di laman ini. Apa pilihan saya?",
+    "a9": "Tulis kepada kami. Jika anda salah seorang pihak yang dinamakan di sini dan anda percaya rekod ini salah, hantarkan penjelasan anda bersama apa-apa yang menyokong pihak anda — resit, sijil siap kerja, surat kelulusan, rekod bank. Jika bukti menunjukkan kami tersilap, pembetulan akan diterbitkan. Jika anda meminta, jawapan anda akan diterbitkan bersama kes tersebut. Permintaan untuk membuang bahan yang tepat dan berbukti tidak akan dipenuhi, tetapi setiap permintaan akan dijawab.",
+
+    "q10": "Saya perlukan bantuan sekarang.",
+    "a10": "Hubungi Pusat Respons Penipuan Nasional di 997 — talian dibuka 24 jam, dan semakin awal bank dimaklumkan, semakin baik peluang wang itu ditahan. Kemudian buat laporan polis di balai berhampiran. Sebelum sebarang bayaran seterusnya, semak nombor akaun dan nombor telefon di Semak Mule.",
+
+    "cta.h": "Masih perlu menghubungi kami?",
+    "cta.p": "E-mel adalah satu-satunya saluran, dan ia dibaca. Sila sertakan seberapa banyak butiran sokongan yang boleh dalam mesej pertama.",
+    "cta.b": "Lihat saluran laporan rasmi"
+  }
+};
+</script>
+<script src="assets/js/site.js" defer></script>
 </head>
+
 <body>
-    <video autoplay muted loop class="video-background">
-        <source src="scam.mp4" type="video/mp4">
-    </video>
-    <header>
-        <div class="container">
-            <img src="logo.webp" alt="Scammer Info Malaysia Logo">
-            <h1>Scammer Info Malaysia</h1>
-            <ul class="navbar">
-                <li><a href="index.html" data-lang="en">Home</a><a href="index.html" data-lang="ms" style="display:none;">Laman Utama</a></li>
-                <li><a href="faq.html" data-lang="en">FAQ</a><a href="faq.html" data-lang="ms" style="display:none;">Soalan Lazim</a></li>
-                <li><a href="links.html" data-lang="en">Important Links</a><a href="links.html" data-lang="ms" style="display:none;">Pautan Penting</a></li>
-                <li><a href="PrivacyPolicy.html" data-lang="en">Privacy Policy</a><a href="PrivacyPolicy.html" data-lang="ms" style="display:none;">Privacy Policy</a></li>
-            </ul>
-            <div class="language-switcher">
-                <button onclick="switchLanguage('en')">English</button>
-                <button onclick="switchLanguage('ms')">Malay</button>
-            </div>
-        </div>
-    </header>
-    <div class="container">
-        <div class="main-content">
-            <div data-lang="en">
-                <h2>Frequently Asked Questions (FAQ)</h2>
-                <div class="faq-item">
-                    <h3>1. What is Scammer Info Malaysia?</h3>
-                    <p>Scammer Info Malaysia is a platform to warn and spread or disclose information about scams in Malaysia. Our goal is to help the public identify and avoid becoming victims of scams.</p>
-                </div>
-                <div class="faq-item">
-                    <h3>2. How do I open a case?</h3>
-                    <p>To open a case, you need to gather the required information and contact us via email through the link on our website. Please ensure all provided information is accurate and complete.</p>
-                </div>
-                <div class="faq-item">
-                    <h3>3. What are the characteristics of cases that will not be rejected for display?</h3>
-                    <p>Cases that are complete with accurate scammer information, a clear chronology, a police report, and other supporting evidence will be displayed on our site.</p>
-                </div>
-                <div class="faq-item">
-                    <h3>4. How do I contact you to add a case?</h3>
-                    <p>You can contact us via email at <span class="email"></span> or through the link on our website.</p>
-                </div>
-                <div class="faq-item">
-                    <h3>5. What kind of evidence is needed to open a case?</h3>
-                    <p>Required evidence includes police reports, conversation screenshots, payment receipts, and other documents that support the scam case.</p>
-                </div>
-                <div class="faq-item">
-                    <h3>6. Can I open a case without a police report?</h3>
-                    <p>The police report is important to support your case and ensure that legal action has been taken against the scammer.</p>
-                </div>
-                <div class="faq-item">
-                    <h3>7. How to ensure the scammer information is accurate?</h3>
-                    <p>Make sure to gather information from reliable sources and include evidence such as official documents, receipts, and communication with the scammer.</p>
-                </div>
-                <div class="faq-item">
-                    <h3>8. How long does it take for a case to be displayed?</h3>
-                    <p>The time taken to display a case can vary depending on the number of cases being processed. We strive to process each case as quickly as possible.</p>
-                </div>
-                <div class="faq-item">
-                    <h3>9. What should I do if the information provided is inaccurate?</h3>
-                    <p>If you find that the information provided is inaccurate, please contact us immediately via email at <span class="email"></span> or through the link on our website.</p>
-                </div>
-                <div class="faq-item">
-                    <h3>10. What if I need urgent assistance?</h3>
-                    <p>If you need urgent assistance, please contact your local authorities or the nearest police station. We also recommend contacting the National Scam Response Center (NSRC) at 997 for further assistance.</p>
-                </div>
-            </div>
-            <div data-lang="ms" style="display:none;">
-                <h2>Soalan Lazim (FAQ)</h2>
-                <div class="faq-item">
-                    <h3>1. Apa itu Scammer Info Malaysia?</h3>
-                    <p>Scammer Info Malaysia adalah platform untuk memberi amaran dan menyebarkan atau mendedahkan maklumat mengenai penipuan di Malaysia. Matlamat kami adalah untuk membantu orang ramai mengenal pasti dan mengelakkan diri daripada menjadi mangsa penipuan.</p>
-                </div>
-                <div class="faq-item">
-                    <h3>2. Bagaimana cara membuka kes?</h3>
-                    <p>Untuk membuka kes, anda perlu mengumpulkan maklumat yang diperlukan dan menghubungi kami melalui e-mel melalui pautan di laman web kami. Sila pastikan semua maklumat yang diberikan adalah tepat dan lengkap.</p>
-                </div>
-                <div class="faq-item">
-                    <h3>3. Apakah ciri-ciri kes yang tidak akan ditolak untuk dipaparkan?</h3>
-                    <p>Kes yang lengkap dengan maklumat penipu yang tepat, kronologi yang jelas, laporan polis, dan bukti lain yang menyokong akan dipaparkan di laman kami.</p>
-                </div>
-                <div class="faq-item">
-                    <h3>4. Bagaimana cara menghubungi kami untuk menambah kes?</h3>
-                    <p>Anda boleh menghubungi kami melalui e-mel di <span class="email"></span> atau melalui pautan di laman web kami.</p>
-                </div>
-                <div class="faq-item">
-                    <h3>5. Apakah jenis bukti yang diperlukan untuk membuka kes?</h3>
-                    <p>Bukti yang diperlukan termasuk laporan polis, screenshot perbualan, resit pembayaran, dan dokumen lain yang menyokong kes penipuan.</p>
-                </div>
-                <div class="faq-item">
-                    <h3>6. Bolehkah saya membuka kes tanpa laporan polis?</h3>
-                    <p>Laporan polis adalah penting untuk menyokong kes anda dan memastikan bahawa tindakan yang sah telah diambil terhadap penipu.</p>
-                </div>
-                <div class="faq-item">
-                    <h3>7. Bagaimana cara memastikan maklumat penipu adalah tepat?</h3>
-                    <p>Pastikan anda mengumpul maklumat daripada sumber yang boleh dipercayai dan menyertakan bukti seperti dokumen rasmi, resit, dan komunikasi dengan penipu.</p>
-                </div>
-                <div class="faq-item">
-                    <h3>8. Berapa lamakah masa yang diambil untuk kes dipaparkan?</h3>
-                    <p>Masa yang diambil untuk memaparkan kes boleh berbeza-beza bergantung kepada jumlah kes yang sedang diproses. Kami akan berusaha untuk memproses setiap kes secepat mungkin.</p>
-                </div>
-                <div class="faq-item">
-                    <h3>9. Apakah yang perlu dilakukan jika maklumat yang diberikan tidak tepat?</h3>
-                    <p>Jika anda mendapati bahawa maklumat yang diberikan tidak tepat, sila hubungi kami dengan segera melalui e-mel di <span class="email"></span> atau melalui pautan di laman web kami.</p>
-                </div>
-                <div class="faq-item">
-                    <h3>10. Bagaimana jika saya memerlukan bantuan segera?</h3>
-                    <p>Jika anda memerlukan bantuan segera, sila hubungi pihak berkuasa tempatan atau balai polis terdekat. Kami juga mengesyorkan untuk menghubungi National Scam Response Center (NSRC) di 997 untuk bantuan lanjut.</p>
-                </div>
-            </div>
-        </div>
+<a class="skip-link" href="#main">Skip to content</a>
+
+<header class="topbar">
+  <div class="topbar__inner">
+    <a class="brand" href="index.html">
+      <img src="assets/img/logo-sm.webp" alt="" width="38" height="38">
+      <span class="brand__name">Scammer Info Malaysia
+        <span class="brand__tag" data-i18n="brand.tag">Scam awareness · Malaysia</span>
+      </span>
+    </a>
+    <nav class="nav" id="primary-nav">
+      <a href="index.html" data-i18n="nav.home">Home</a>
+      <a href="mmr/index.html" data-i18n="nav.case">The Case</a>
+      <a href="faq.html" data-i18n="nav.faq">FAQ</a>
+      <a href="links.html" data-i18n="nav.links">Report &amp; Help</a>
+      <a href="PrivacyPolicy.html" data-i18n="nav.privacy">Privacy &amp; Legal</a>
+    </nav>
+    <div class="lang" role="group" aria-label="Language">
+      <button type="button" data-lang="en" aria-pressed="true">EN</button>
+      <button type="button" data-lang="ms" aria-pressed="false">BM</button>
     </div>
-    <footer>
-        <p data-lang="en">&copy; 2024 Scammer Info Malaysia. All Rights Reserved.</p>
-        <p data-lang="ms" style="display:none;">&copy; 2024 Scammer Info Malaysia. Semua Hak Cipta Terpelihara.</p>
-        <p data-lang="en">📧 Contact us at: <span class="email"></span> if there is any inaccurate information or if you want to add cases to this site. Thank you! 🌟</p>
-        <p data-lang="ms" style="display:none;">📧 Hubungi kami di: <span class="email"></span> sekiranya terdapat maklumat yang tidak tepat atau jika anda ingin menambah kes pada laman ini. Terima kasih! 🌟</p>
-    </footer>
+    <button type="button" class="nav-toggle" aria-expanded="false" aria-controls="primary-nav" data-i18n-aria="menu" aria-label="Menu"></button>
+  </div>
+</header>
+
+<main id="main">
+  <section class="section">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="eyebrow" data-i18n="p.eyebrow">Questions &amp; answers</span>
+        <h1 style="font-size:clamp(2rem,5vw,3rem)" data-i18n="p.h1">How this site works</h1>
+        <p class="lead" data-i18n="p.lead">Ten questions, grouped.</p>
+      </div>
+
+      <div style="max-width:860px">
+
+        <!-- about -->
+        <p class="eyebrow" data-i18n="g.about">About this site</p>
+        <div class="accordion">
+          <details class="acc" open>
+            <summary><span class="acc__n">01</span><span data-i18n="q1">What is Scammer Info Malaysia?</span></summary>
+            <div class="acc__body"><p data-i18n="a1"></p></div>
+          </details>
+          <details class="acc">
+            <summary><span class="acc__n">02</span><span data-i18n="q2">Why is there only one case?</span></summary>
+            <div class="acc__body"><p data-i18n="a2"></p></div>
+          </details>
+          <details class="acc">
+            <summary><span class="acc__n">03</span><span data-i18n="q3">Are you the police? Can you get my money back?</span></summary>
+            <div class="acc__body"><p data-i18n="a3"></p></div>
+          </details>
+        </div>
+
+        <!-- submitting -->
+        <p class="eyebrow mt-3" data-i18n="g.submit">Submitting a case</p>
+        <div class="accordion">
+          <details class="acc">
+            <summary><span class="acc__n">04</span><span data-i18n="q4">How do I submit a case?</span></summary>
+            <div class="acc__body">
+              <p data-i18n="a4"></p>
+              <p class="mt-1">📧 <span class="email"></span></p>
+            </div>
+          </details>
+          <details class="acc">
+            <summary><span class="acc__n">05</span><span data-i18n="q5">What evidence do I need?</span></summary>
+            <div class="acc__body"><p data-i18n="a5"></p></div>
+          </details>
+          <details class="acc">
+            <summary><span class="acc__n">06</span><span data-i18n="q6">Do I need a police report?</span></summary>
+            <div class="acc__body"><p data-i18n="a6"></p></div>
+          </details>
+          <details class="acc">
+            <summary><span class="acc__n">07</span><span data-i18n="q7">Will my name be published if I submit a case?</span></summary>
+            <div class="acc__body"><p data-i18n="a7"></p></div>
+          </details>
+        </div>
+
+        <!-- corrections -->
+        <p class="eyebrow mt-3" data-i18n="g.correct">Corrections &amp; right of reply</p>
+        <div class="accordion">
+          <details class="acc">
+            <summary><span class="acc__n">08</span><span data-i18n="q8">Something here is inaccurate. How do I get it corrected?</span></summary>
+            <div class="acc__body">
+              <p data-i18n="a8"></p>
+              <p class="mt-1">📧 <span class="email"></span></p>
+            </div>
+          </details>
+          <details class="acc">
+            <summary><span class="acc__n">09</span><span data-i18n="q9">I am named on this site. What are my options?</span></summary>
+            <div class="acc__body">
+              <p data-i18n="a9"></p>
+              <p class="mt-1">📧 <span class="email"></span></p>
+            </div>
+          </details>
+        </div>
+
+        <!-- help -->
+        <p class="eyebrow mt-3" data-i18n="g.help">If it has already happened</p>
+        <div class="accordion">
+          <details class="acc">
+            <summary><span class="acc__n">10</span><span data-i18n="q10">I need help now.</span></summary>
+            <div class="acc__body">
+              <p data-i18n="a10"></p>
+              <div class="btn-row mt-2">
+                <a class="btn btn--ghost btn--sm" href="tel:997">997</a>
+                <a class="btn btn--ghost btn--sm" href="https://semakmule.rmp.gov.my/" target="_blank" rel="noopener noreferrer">Semak Mule</a>
+              </div>
+            </div>
+          </details>
+        </div>
+
+        <div class="card card--pad-lg mt-3" style="text-align:center">
+          <h2 style="font-size:1.4rem" data-i18n="cta.h">Still need to reach us?</h2>
+          <p data-i18n="cta.p">Email is the only channel.</p>
+          <p class="mt-1" style="font-size:1.05rem">📧 <span class="email"></span></p>
+          <div class="btn-row mt-2" style="justify-content:center">
+            <a class="btn btn--ghost btn--sm" href="links.html" data-i18n="cta.b">See official reporting channels</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <section class="section--tight" style="padding-bottom:clamp(3rem,7vw,5rem)">
+    <div class="wrap">
+      <div class="sos">
+        <div>
+          <h2 data-i18n="sos.h2">Just been scammed? Do not wait.</h2>
+          <p data-i18n="sos.p">The National Scam Response Centre answers 24 hours a day.</p>
+        </div>
+        <a class="sos__num" href="tel:997"><b>997</b><span data-i18n="sos.label">NSRC hotline</span></a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="wrap">
+    <div class="footer__grid">
+      <div>
+        <a class="brand" href="index.html" style="margin-bottom:1rem">
+          <img src="assets/img/logo-sm.webp" alt="" width="38" height="38">
+          <span class="brand__name">Scammer Info Malaysia</span>
+        </a>
+        <p data-i18n="foot.about.body">An independent public-interest record of a documented fraud case in Malaysia.</p>
+        <div class="social mt-2">
+          <a href="https://www.facebook.com/profile.php?id=61562121987884" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M22 12a10 10 0 1 0-11.6 9.9v-7H7.9V12h2.5V9.8c0-2.5 1.5-3.9 3.8-3.9 1.1 0 2.2.2 2.2.2v2.5h-1.3c-1.2 0-1.6.8-1.6 1.6V12h2.8l-.4 2.9h-2.3v7A10 10 0 0 0 22 12z"/></svg>
+          </a>
+        </div>
+      </div>
+      <div>
+        <h4 data-i18n="foot.nav.title">Pages</h4>
+        <ul>
+          <li><a href="index.html" data-i18n="nav.home">Home</a></li>
+          <li><a href="mmr/index.html" data-i18n="nav.case">The Case</a></li>
+          <li><a href="faq.html" data-i18n="nav.faq">FAQ</a></li>
+          <li><a href="links.html" data-i18n="nav.links">Report &amp; Help</a></li>
+          <li><a href="PrivacyPolicy.html" data-i18n="nav.privacy">Privacy &amp; Legal</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 data-i18n="foot.help.title">Get help now</h4>
+        <ul>
+          <li><a href="tel:997" data-i18n="foot.help.nsrc">NSRC hotline 997</a></li>
+          <li><a href="https://semakmule.rmp.gov.my/" target="_blank" rel="noopener noreferrer" data-i18n="foot.help.mule">Semak Mule</a></li>
+          <li><a href="https://www.rmp.gov.my/" target="_blank" rel="noopener noreferrer" data-i18n="foot.help.police">Royal Malaysia Police</a></li>
+        </ul>
+        <p class="small mt-2" data-i18n="foot.contact">Spotted an error? Email us.</p>
+        <p class="small">📧 <span class="email"></span></p>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <span data-i18n="foot.rights">© 2024–2026 Scammer Info Malaysia. All rights reserved.</span>
+      <span class="small" style="max-width:52ch" data-i18n="foot.disclaimer">Published in the public interest.</span>
+    </div>
+  </div>
+</footer>
+
+<button type="button" class="to-top" data-i18n-aria="top" aria-label="Back to top"></button>
 </body>
 </html>
