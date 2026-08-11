@@ -1,260 +1,282 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Important Links - Scammer Info Malaysia</title>
-    <meta name="description" content="Find important links to official websites and resources to help you stay informed about scams and how to report them in Malaysia.">
-    <meta property="og:title" content="Important Links - Scammer Info Malaysia">
-    <meta property="og:description" content="Find important links to official websites and resources to help you stay informed about scams and how to report them in Malaysia.">
-    <meta property="og:image" content="logo.webp">
-    <meta property="og:url" content="https://www.scammerinfomalaysia.com/links.html">
-    <meta property="og:type" content="website">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-    <style>
-        body {
-            font-family: 'Roboto', sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f8f9fa;
-            color: #333;
-            display: flex;
-            flex-direction: column;
-            min-height: 100vh;
-        }
-        header, .main-content, footer {
-            position: relative;
-            z-index: 1;
-        }
-        .video-background {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            z-index: 0;
-        }
-        .container {
-            width: 80%;
-            margin: auto;
-            text-align: center;
-            padding: 20px 0;
-            flex: 1;
-            position: relative;
-        }
-        header {
-            background: rgba(0, 0, 0, 0.7);
-            color: #fff;
-            padding: 10px 0;
-            border-bottom: #77aaff 3px solid;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-        .navbar {
-            display: flex;
-            justify-content: center;
-            list-style: none;
-            padding: 0;
-            margin: 0;
-        }
-        .navbar li {
-            margin: 0 10px;
-        }
-        .navbar a {
-            color: #fff;
-            text-decoration: none;
-            font-weight: 700;
-            transition: color 0.3s ease;
-        }
-        .navbar a:hover {
-            color: #77aaff;
-        }
-        header h1 {
-            margin: 1px 0 0 0;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            font-size: 1.5em;
-        }
-        header img {
-            max-width: 100px;
-            height: auto;
-            margin-bottom: 5px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            border-radius: 50%;
-            transition: transform 0.3s ease;
-        }
-        header img:hover {
-            transform: scale(1.1);
-        }
-        .main-content {
-            padding: 20px;
-            background: rgba(255, 255, 255, 0.8);
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            margin-top: 10px;
-            border-radius: 8px;
-            text-align: left;
-        }
-        .main-content h2 {
-            color: #333;
-            border-bottom: 2px solid #ddd;
-            padding-bottom: 10px;
-            margin-bottom: 20px;
-        }
-        .main-content p {
-            margin: 10px 0;
-            line-height: 1.6;
-            color: #555;
-        }
-        .link-item {
-            margin-bottom: 20px;
-        }
-        .link-item h3 {
-            margin: 0 0 10px;
-            color: #007bff;
-        }
-        .link-item a {
-            text-decoration: none;
-            color: #007bff;
-        }
-        .link-item a:hover {
-            text-decoration: underline;
-        }
-        .language-switcher {
-            margin-top: 20px;
-        }
-        .language-switcher button {
-            padding: 10px 20px;
-            margin: 0 5px;
-            font-size: 16px;
-            cursor: pointer;
-            background-color: #007bff;
-            color: #fff;
-            border: none;
-            border-radius: 5px;
-            transition: background-color 0.3s ease, transform 0.3s ease;
-        }
-        .language-switcher button:hover {
-            background-color: #0056b3;
-            transform: translateY(-3px);
-        }
-        footer {
-            background: rgba(0, 0, 0, 0.7);
-            color: #fff;
-            text-align: center;
-            padding: 1px 0;
-            margin-top: 10px;
-        }
-        footer p {
-            margin: 5px 0;
-        }
-        a {
-            color: #007bff;
-            text-decoration: none;
-        }
-        a:hover {
-            text-decoration: underline;
-        }
-    </style>
-    <script>
-        function switchLanguage(lang) {
-            const elements = document.querySelectorAll('[data-lang]');
-            elements.forEach(element => {
-                if (element.getAttribute('data-lang') === lang) {
-                    element.style.display = 'block';
-                } else {
-                    element.style.display = 'none';
-                }
-            });
-        }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-        document.addEventListener('DOMContentLoaded', function() {
-            switchLanguage('en'); // Default language
-            var email = '&#52;&#114;&#114;&#100;&#99;&#121;&#102;&#100;&#118;&#64;&#109;&#111;&#122;&#109;&#97;&#105;&#108;&#46;&#99;&#111;&#109;';
-            var emailContainers = document.querySelectorAll('.email');
-            emailContainers.forEach(function(container) {
-                container.innerHTML = '<a href="mailto:' + email + '">' + email + '</a>';
-            });
-        });
-    </script>
+<!-- Language bootstrap. Runs before first paint so a visitor who chose BM
+     never sees the English source text flash on a page change. -->
+<script>
+(function () {
+  var l;
+  try { l = localStorage.getItem("sim-lang"); } catch (e) { /* private mode */ }
+  if (l !== "en" && l !== "ms") {
+    var n = (navigator.language || "en").toLowerCase();
+    l = (n.indexOf("ms") === 0 || n.indexOf("id") === 0) ? "ms" : "en";
+  }
+  var d = document.documentElement;
+  d.lang = l;
+  d.setAttribute("data-lang", l);
+  if (l !== "en") {
+    d.classList.add("i18n-pending");
+    setTimeout(function () { d.classList.remove("i18n-pending"); }, 1500);
+  }
+})();
+</script>
+
+<title>Report &amp; Help — Official channels | Scammer Info Malaysia</title>
+<meta name="description" content="Official Malaysian channels for reporting a scam: NSRC 997, Semak Mule, PDRM, the National Financial Crime Centre, Bank Negara Malaysia and MCMC.">
+<meta name="theme-color" content="#070b14">
+
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Scammer Info Malaysia">
+<meta property="og:title" content="Report &amp; Help — Official channels">
+<meta property="og:description" content="Where to report a scam in Malaysia, and how to check an account before you pay.">
+<meta property="og:image" content="https://www.scammerinfomalaysia.com/logo.webp">
+<meta property="og:url" content="https://www.scammerinfomalaysia.com/links.html">
+
+<link rel="canonical" href="https://www.scammerinfomalaysia.com/links.html">
+<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+<link rel="manifest" href="site.webmanifest">
+<link rel="shortcut icon" href="favicon.ico">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap">
+<link rel="stylesheet" href="assets/css/site.css">
+
+<script>
+window.PAGE_I18N = {
+  en: {
+    "page.title": "Report & Help — Official channels | Scammer Info Malaysia",
+    "p.eyebrow": "Official channels",
+    "p.h1": "Report it. Check it. Get help.",
+    "p.lead": "These are the official Malaysian bodies for reporting fraud and verifying who you are about to pay. All of them are free to use.",
+
+    "urgent.h": "Start here if money has already left your account",
+    "urgent.p": "The National Scam Response Centre runs a 24-hour line. Call before you do anything else — the sooner the banks are notified, the better the chance of holding the funds.",
+
+    "l1.t": "Semak Mule (PDRM)",
+    "l1.b": "Check any bank account number or phone number against reported scam cases before you transfer money. Takes seconds and costs nothing.",
+    "l2.t": "Royal Malaysia Police (PDRM)",
+    "l2.b": "The official PDRM portal — station locations, procedures, and general guidance on lodging a police report.",
+    "l3.t": "National Financial Crime Centre (NFCC)",
+    "l3.b": "The national coordinating body for financial crime in Malaysia, with guidance on how and where to report.",
+    "l4.t": "Bank Negara Malaysia (BNM)",
+    "l4.b": "The central bank — for complaints about financial services, licensed institutions and financial fraud.",
+    "l5.t": "MCMC",
+    "l5.b": "The Malaysian Communications and Multimedia Commission — for complaints about scam calls, SMS, and online content.",
+    "l6.t": "SSM e-Search",
+    "l6.b": "Verify that a business or company registration is real and still active before you sign anything or transfer a deposit.",
+    "l.visit": "Visit site",
+
+    "prep.h": "What to bring to a police report",
+    "prep.1": "Bank transfer receipts, with dates and reference numbers",
+    "prep.2": "The full chat history — export it rather than screenshotting selectively",
+    "prep.3": "Every document you signed or received, including quotations and invoices",
+    "prep.4": "The recipient's account number, phone number and any company registration number",
+    "prep.5": "A short written chronology: what was promised, what you paid, and when",
+
+    "case.h": "See what a documented case looks like",
+    "case.p": "Our own case file shows exactly which records matter and how they fit together — useful as a checklist when you prepare your own report.",
+    "case.b": "Open the case file"
+  },
+  ms: {
+    "page.title": "Lapor & Bantuan — Saluran rasmi | Scammer Info Malaysia",
+    "p.eyebrow": "Saluran rasmi",
+    "p.h1": "Lapor. Semak. Dapatkan bantuan.",
+    "p.lead": "Ini adalah badan rasmi Malaysia untuk melaporkan penipuan dan mengesahkan siapa yang bakal anda bayar. Kesemuanya percuma.",
+
+    "urgent.h": "Mulakan di sini jika wang sudah keluar dari akaun anda",
+    "urgent.p": "Pusat Respons Penipuan Nasional mengendalikan talian 24 jam. Hubungi sebelum anda buat apa-apa yang lain — semakin awal pihak bank dimaklumkan, semakin baik peluang wang itu ditahan.",
+
+    "l1.t": "Semak Mule (PDRM)",
+    "l1.b": "Semak mana-mana nombor akaun bank atau nombor telefon terhadap kes penipuan yang dilaporkan sebelum anda memindahkan wang. Hanya beberapa saat, dan percuma.",
+    "l2.t": "Polis Diraja Malaysia (PDRM)",
+    "l2.b": "Portal rasmi PDRM — lokasi balai, prosedur, dan panduan umum untuk membuat laporan polis.",
+    "l3.t": "Pusat Jenayah Kewangan Nasional (NFCC)",
+    "l3.b": "Badan penyelaras kebangsaan bagi jenayah kewangan di Malaysia, dengan panduan cara dan tempat membuat laporan.",
+    "l4.t": "Bank Negara Malaysia (BNM)",
+    "l4.b": "Bank pusat — untuk aduan mengenai perkhidmatan kewangan, institusi berlesen dan penipuan kewangan.",
+    "l5.t": "MCMC",
+    "l5.b": "Suruhanjaya Komunikasi dan Multimedia Malaysia — untuk aduan berkaitan panggilan penipuan, SMS, dan kandungan dalam talian.",
+    "l6.t": "Carian e-Search SSM",
+    "l6.b": "Sahkan bahawa pendaftaran perniagaan atau syarikat itu wujud dan masih aktif sebelum anda menandatangani apa-apa atau memindahkan deposit.",
+    "l.visit": "Lawati laman",
+
+    "prep.h": "Apa yang perlu dibawa untuk laporan polis",
+    "prep.1": "Resit pindahan bank, lengkap dengan tarikh dan nombor rujukan",
+    "prep.2": "Sejarah perbualan penuh — eksport keseluruhannya, bukan tangkapan skrin terpilih sahaja",
+    "prep.3": "Setiap dokumen yang anda tandatangani atau terima, termasuk sebut harga dan invois",
+    "prep.4": "Nombor akaun penerima, nombor telefon dan sebarang nombor pendaftaran syarikat",
+    "prep.5": "Kronologi ringkas bertulis: apa yang dijanjikan, apa yang anda bayar, dan bila",
+
+    "case.h": "Lihat rupa sebuah kes yang didokumentasi",
+    "case.p": "Fail kes kami menunjukkan dengan tepat rekod mana yang penting dan bagaimana ia bersambung — berguna sebagai senarai semak semasa anda menyediakan laporan sendiri.",
+    "case.b": "Buka fail kes"
+  }
+};
+</script>
+<script src="assets/js/site.js" defer></script>
 </head>
+
 <body>
-    <video autoplay muted loop class="video-background">
-        <source src="scam.mp4" type="video/mp4">
-    </video>
-    <header>
-        <div class="container">
-            <img src="logo.webp" alt="Scammer Info Malaysia Logo">
-            <h1>Scammer Info Malaysia</h1>
-            <ul class="navbar">
-                <li><a href="index.html" data-lang="en">Home</a><a href="index.html" data-lang="ms" style="display:none;">Laman Utama</a></li>
-                <li><a href="faq.html" data-lang="en">FAQ</a><a href="faq.html" data-lang="ms" style="display:none;">Soalan Lazim</a></li>
-                <li><a href="links.html" data-lang="en">Important Links</a><a href="links.html" data-lang="ms" style="display:none;">Pautan Penting</a></li>
-                <li><a href="PrivacyPolicy.html" data-lang="en">Privacy Policy</a><a href="PrivacyPolicy.html" data-lang="ms" style="display:none;">Privacy Policy</a></li>
-            </ul>
-            <div class="language-switcher">
-                <button onclick="switchLanguage('en')">English</button>
-                <button onclick="switchLanguage('ms')">Malay</button>
-            </div>
-        </div>
-    </header>
-    <div class="container">
-        <div class="main-content">
-            <div data-lang="en">
-                <h2>Important Links</h2>
-                <div class="link-item">
-                    <h3><a href="https://www.rmp.gov.my/" target="_blank" rel="noopener noreferrer">Royal Malaysia Police (PDRM)</a></h3>
-                    <p>Official website of the Royal Malaysia Police for more information and assistance regarding police reports and safety.</p>
-                </div>
-                <div class="link-item">
-                    <h3><a href="https://semakmule.rmp.gov.my/" target="_blank" rel="noopener noreferrer">CCID Portal (PDRM)</a></h3>
-                    <p>Portal of the Commercial Crime Investigation Department (CCID) of the Royal Malaysia Police for more information on commercial crimes.</p>
-                </div>
-                <div class="link-item">
-                    <h3><a href="https://nfcc.jpm.gov.my/" target="_blank" rel="noopener noreferrer">National Financial Crime Centre (NFCC)</a></h3>
-                    <p>Official NFCC portal for information on financial crimes in Malaysia and how to report them.</p>
-                </div>
-                <div class="link-item">
-                    <h3><a href="https://www.bnm.gov.my/" target="_blank" rel="noopener noreferrer">Bank Negara Malaysia (BNM)</a></h3>
-                    <p>Official portal of Bank Negara Malaysia for more information on financial services and reporting financial fraud.</p>
-                </div>
-                <div class="link-item">
-                    <h3><a href="https://www.mcmc.gov.my/en/home" target="_blank" rel="noopener noreferrer">Malaysian Communications and Multimedia Commission (MCMC)</a></h3>
-                    <p>Official website of MCMC for more information on communication and multimedia-related complaints.</p>
-                </div>
-            </div>
-            <div data-lang="ms" style="display:none;">
-                <h2>Pautan Penting</h2>
-                <div class="link-item">
-                    <h3><a href="https://www.rmp.gov.my/" target="_blank" rel="noopener noreferrer">Polis Diraja Malaysia (PDRM)</a></h3>
-                    <p>Laman web rasmi Polis Diraja Malaysia untuk maklumat lanjut dan bantuan berkenaan laporan polis dan keselamatan.</p>
-                </div>
-                <div class="link-item">
-                    <h3><a href="https://semakmule.rmp.gov.my/" target="_blank" rel="noopener noreferrer">Portal JSJK (PDRM)</a></h3>
-                    <p>Portal Jabatan Siasatan Jenayah Komersil (JSJK) Polis Diraja Malaysia untuk maklumat lanjut mengenai jenayah komersil.</p>
-                </div>
-                <div class="link-item">
-                    <h3><a href="https://nfcc.jpm.gov.my/" target="_blank" rel="noopener noreferrer">Pusat Jenayah Kewangan Nasional (NFCC)</a></h3>
-                    <p>Portal rasmi NFCC untuk maklumat mengenai jenayah kewangan di Malaysia dan bagaimana untuk melaporkannya.</p>
-                </div>
-                <div class="link-item">
-                    <h3><a href="https://www.bnm.gov.my/" target="_blank" rel="noopener noreferrer">Bank Negara Malaysia (BNM)</a></h3>
-                    <p>Portal rasmi Bank Negara Malaysia untuk maklumat lanjut mengenai perkhidmatan kewangan dan laporan penipuan kewangan.</p>
-                </div>
-                <div class="link-item">
-                    <h3><a href="https://www.mcmc.gov.my/en/home" target="_blank" rel="noopener noreferrer">Suruhanjaya Komunikasi dan Multimedia Malaysia (MCMC)</a></h3>
-                    <p>Laman web rasmi MCMC untuk maklumat lanjut mengenai aduan berkaitan komunikasi dan multimedia.</p>
-                </div>
-            </div>
-        </div>
+<a class="skip-link" href="#main">Skip to content</a>
+
+<header class="topbar">
+  <div class="topbar__inner">
+    <a class="brand" href="index.html">
+      <img src="assets/img/logo-sm.webp" alt="" width="38" height="38">
+      <span class="brand__name">Scammer Info Malaysia
+        <span class="brand__tag" data-i18n="brand.tag">Scam awareness · Malaysia</span>
+      </span>
+    </a>
+    <nav class="nav" id="primary-nav">
+      <a href="index.html" data-i18n="nav.home">Home</a>
+      <a href="mmr/index.html" data-i18n="nav.case">The Case</a>
+      <a href="faq.html" data-i18n="nav.faq">FAQ</a>
+      <a href="links.html" data-i18n="nav.links">Report &amp; Help</a>
+      <a href="PrivacyPolicy.html" data-i18n="nav.privacy">Privacy &amp; Legal</a>
+    </nav>
+    <div class="lang" role="group" aria-label="Language">
+      <button type="button" data-lang="en" aria-pressed="true">EN</button>
+      <button type="button" data-lang="ms" aria-pressed="false">BM</button>
     </div>
-    <footer>
-        <p data-lang="en">&copy; 2024 Scammer Info Malaysia. All Rights Reserved.</p>
-        <p data-lang="ms" style="display:none;">&copy; 2024 Scammer Info Malaysia. Semua Hak Cipta Terpelihara.</p>
-        <p data-lang="en">📧 Contact us at: <span class="email"></span> if there is any inaccurate information or if you want to add cases to this site. Thank you! 🌟</p>
-        <p data-lang="ms" style="display:none;">📧 Hubungi kami di: <span class="email"></span> sekiranya terdapat maklumat yang tidak tepat atau jika anda ingin menambah kes pada laman ini. Terima kasih! 🌟</p>
-    </footer>
+    <button type="button" class="nav-toggle" aria-expanded="false" aria-controls="primary-nav" data-i18n-aria="menu" aria-label="Menu"></button>
+  </div>
+</header>
+
+<main id="main">
+  <section class="section">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="eyebrow" data-i18n="p.eyebrow">Official channels</span>
+        <h1 style="font-size:clamp(2rem,5vw,3rem)" data-i18n="p.h1">Report it. Check it. Get help.</h1>
+        <p class="lead" data-i18n="p.lead">These are the official Malaysian bodies for reporting fraud.</p>
+      </div>
+
+      <!-- urgent -->
+      <div class="sos reveal">
+        <div>
+          <h2 data-i18n="urgent.h">Start here if money has already left your account</h2>
+          <p data-i18n="urgent.p">The National Scam Response Centre runs a 24-hour line.</p>
+        </div>
+        <a class="sos__num" href="tel:997"><b>997</b><span data-i18n="sos.label">NSRC hotline</span></a>
+      </div>
+
+      <!-- channels -->
+      <div class="grid grid--2 mt-3">
+        <div class="card card--hover reveal">
+          <span class="card__icon is-green"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="11" cy="11" r="7" stroke="currentColor" stroke-width="2"/><path d="m20 20-3.5-3.5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span>
+          <h3 data-i18n="l1.t">Semak Mule (PDRM)</h3>
+          <p data-i18n="l1.b">Check any bank account or phone number against reported scam cases.</p>
+          <div class="btn-row mt-2"><a class="btn btn--ghost btn--sm" href="https://semakmule.rmp.gov.my/" target="_blank" rel="noopener noreferrer" data-i18n="l.visit">Visit site</a></div>
+        </div>
+
+        <div class="card card--hover reveal" data-delay="70">
+          <span class="card__icon"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg></span>
+          <h3 data-i18n="l2.t">Royal Malaysia Police (PDRM)</h3>
+          <p data-i18n="l2.b">The official PDRM portal — station locations and procedures.</p>
+          <div class="btn-row mt-2"><a class="btn btn--ghost btn--sm" href="https://www.rmp.gov.my/" target="_blank" rel="noopener noreferrer" data-i18n="l.visit">Visit site</a></div>
+        </div>
+
+        <div class="card card--hover reveal">
+          <span class="card__icon is-blue"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M3 21h18M4 21V10l8-6 8 6v11M9 21v-6h6v6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+          <h3 data-i18n="l3.t">National Financial Crime Centre (NFCC)</h3>
+          <p data-i18n="l3.b">The national coordinating body for financial crime in Malaysia.</p>
+          <div class="btn-row mt-2"><a class="btn btn--ghost btn--sm" href="https://nfcc.jpm.gov.my/" target="_blank" rel="noopener noreferrer" data-i18n="l.visit">Visit site</a></div>
+        </div>
+
+        <div class="card card--hover reveal" data-delay="70">
+          <span class="card__icon is-blue"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="2" y="5" width="20" height="14" rx="2" stroke="currentColor" stroke-width="2"/><path d="M2 10h20" stroke="currentColor" stroke-width="2"/></svg></span>
+          <h3 data-i18n="l4.t">Bank Negara Malaysia (BNM)</h3>
+          <p data-i18n="l4.b">For complaints about financial services and financial fraud.</p>
+          <div class="btn-row mt-2"><a class="btn btn--ghost btn--sm" href="https://www.bnm.gov.my/" target="_blank" rel="noopener noreferrer" data-i18n="l.visit">Visit site</a></div>
+        </div>
+
+        <div class="card card--hover reveal">
+          <span class="card__icon"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+          <h3 data-i18n="l5.t">MCMC</h3>
+          <p data-i18n="l5.b">For complaints about scam calls, SMS, and online content.</p>
+          <div class="btn-row mt-2"><a class="btn btn--ghost btn--sm" href="https://www.mcmc.gov.my/en/home" target="_blank" rel="noopener noreferrer" data-i18n="l.visit">Visit site</a></div>
+        </div>
+
+        <div class="card card--hover reveal" data-delay="70">
+          <span class="card__icon is-green"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="M14 2v6h6M9 15l2 2 4-4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+          <h3 data-i18n="l6.t">SSM e-Search</h3>
+          <p data-i18n="l6.b">Verify that a company registration is real and still active.</p>
+          <div class="btn-row mt-2"><a class="btn btn--ghost btn--sm" href="https://www.ssm.com.my/" target="_blank" rel="noopener noreferrer" data-i18n="l.visit">Visit site</a></div>
+        </div>
+      </div>
+
+      <!-- checklist -->
+      <div class="card card--pad-lg mt-3 reveal">
+        <h2 style="font-size:1.4rem" data-i18n="prep.h">What to bring to a police report</h2>
+        <ul class="prose" style="margin-top:1rem;padding-left:1.15rem">
+          <li data-i18n="prep.1">Bank transfer receipts, with dates and reference numbers</li>
+          <li data-i18n="prep.2">The full chat history</li>
+          <li data-i18n="prep.3">Every document you signed or received</li>
+          <li data-i18n="prep.4">The recipient's account number and phone number</li>
+          <li data-i18n="prep.5">A short written chronology</li>
+        </ul>
+      </div>
+
+      <div class="card card--pad-lg mt-2 reveal" style="text-align:center">
+        <h2 style="font-size:1.35rem" data-i18n="case.h">See what a documented case looks like</h2>
+        <p class="lead" style="margin-inline:auto;max-width:58ch" data-i18n="case.p">Our own case file shows exactly which records matter.</p>
+        <div class="btn-row mt-2" style="justify-content:center">
+          <a class="btn btn--primary" href="mmr/index.html" data-i18n="case.b">Open the case file</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="wrap">
+    <div class="footer__grid">
+      <div>
+        <a class="brand" href="index.html" style="margin-bottom:1rem">
+          <img src="assets/img/logo-sm.webp" alt="" width="38" height="38">
+          <span class="brand__name">Scammer Info Malaysia</span>
+        </a>
+        <p data-i18n="foot.about.body">An independent public-interest record of a documented fraud case in Malaysia.</p>
+        <div class="social mt-2">
+          <a href="https://www.facebook.com/profile.php?id=61562121987884" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M22 12a10 10 0 1 0-11.6 9.9v-7H7.9V12h2.5V9.8c0-2.5 1.5-3.9 3.8-3.9 1.1 0 2.2.2 2.2.2v2.5h-1.3c-1.2 0-1.6.8-1.6 1.6V12h2.8l-.4 2.9h-2.3v7A10 10 0 0 0 22 12z"/></svg>
+          </a>
+        </div>
+      </div>
+      <div>
+        <h4 data-i18n="foot.nav.title">Pages</h4>
+        <ul>
+          <li><a href="index.html" data-i18n="nav.home">Home</a></li>
+          <li><a href="mmr/index.html" data-i18n="nav.case">The Case</a></li>
+          <li><a href="faq.html" data-i18n="nav.faq">FAQ</a></li>
+          <li><a href="links.html" data-i18n="nav.links">Report &amp; Help</a></li>
+          <li><a href="PrivacyPolicy.html" data-i18n="nav.privacy">Privacy &amp; Legal</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 data-i18n="foot.help.title">Get help now</h4>
+        <ul>
+          <li><a href="tel:997" data-i18n="foot.help.nsrc">NSRC hotline 997</a></li>
+          <li><a href="https://semakmule.rmp.gov.my/" target="_blank" rel="noopener noreferrer" data-i18n="foot.help.mule">Semak Mule</a></li>
+          <li><a href="https://www.rmp.gov.my/" target="_blank" rel="noopener noreferrer" data-i18n="foot.help.police">Royal Malaysia Police</a></li>
+        </ul>
+        <p class="small mt-2" data-i18n="foot.contact">Spotted an error? Email us.</p>
+        <p class="small">📧 <span class="email"></span></p>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <span data-i18n="foot.rights">© 2024–2026 Scammer Info Malaysia. All rights reserved.</span>
+      <span class="small" style="max-width:52ch" data-i18n="foot.disclaimer">Published in the public interest.</span>
+    </div>
+  </div>
+</footer>
+
+<button type="button" class="to-top" data-i18n-aria="top" aria-label="Back to top"></button>
 </body>
 </html>
-
