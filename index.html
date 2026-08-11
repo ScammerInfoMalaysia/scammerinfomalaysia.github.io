@@ -1,340 +1,576 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Scammer Info Malaysia - Platform for Scam Awareness</title>
-    <meta name="description" content="Scammer Info Malaysia is a platform dedicated to warning and spreading information about scams in Malaysia. Our goal is to help people identify and avoid becoming victims of scams.">
-    <!-- Schema.org structured data -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "WebSite",
-      "name": "Scammer Info Malaysia",
-      "url": "https://www.scammerinfomalaysia.com",
-      "description": "Scammer Info Malaysia is a platform dedicated to warning and spreading information about scams in Malaysia.",
-      "publisher": {
-        "@type": "Organization",
-        "name": "Scammer Info Malaysia",
-        "logo": {
-          "@type": "ImageObject",
-          "url": "https://www.scammerinfomalaysia.com/logo.webp"
-        },
-        "contactPoint": {
-          "@type": "ContactPoint",
-          "url": "https://www.scammerinfomalaysia.com/faq.html"
-        }
-      }
-    }
-    </script>
-    <!-- Favicon and icons -->
-    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
-    <link rel="manifest" href="site.webmanifest">
-    <link rel="shortcut icon" href="favicon.ico">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <style>
-        body {
-            font-family: 'Roboto', sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f8f9fa;
-            color: #333;
-            display: flex;
-            flex-direction: column;
-            min-height: 100vh;
-        }
-        header, .main-content, footer {
-            position: relative;
-            z-index: 1;
-        }
-        .video-background {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            z-index: 0;
-        }
-        .container {
-            width: 80%;
-            margin: auto;
-            text-align: center;
-            padding: 20px 0;
-            flex: 1;
-            position: relative;
-        }
-        header {
-            background: rgba(0, 0, 0, 0.7);
-            color: #fff;
-            padding: 10px 0;
-            border-bottom: #77aaff 3px solid;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-        .navbar {
-            display: flex;
-            justify-content: center;
-            list-style: none;
-            padding: 0;
-            margin: 0;
-        }
-        .navbar li {
-            margin: 0 10px;
-        }
-        .navbar a {
-            color: #fff;
-            text-decoration: none;
-            font-weight: 700;
-            transition: color 0.3s ease;
-        }
-        .navbar a:hover {
-            color: #77aaff;
-        }
-        header h1 {
-            margin: 1px 0 0 0;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            font-size: 1.5em;
-        }
-        header img {
-            max-width: 100px;
-            height: auto;
-            margin-bottom: 5px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            border-radius: 50%;
-            transition: transform 0.3s ease;
-        }
-        header img:hover {
-            transform: scale(1.1);
-        }
-        .main-content {
-            padding: 20px;
-            background: rgba(255, 255, 255, 0.8);
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            margin-top: 10px;
-            border-radius: 8px;
-        }
-        .main-content h2 {
-            color: #333;
-            border-bottom: 2px solid #ddd;
-            padding-bottom: 10px;
-            margin-bottom: 20px;
-        }
-        .main-content p {
-            margin: 10px 0;
-            line-height: 1.6;
-            color: #555;
-        }
-        .button {
-            display: inline-block;
-            padding: 10px 20px;
-            margin-top: 20px;
-            font-size: 16px;
-            color: #fff;
-            background-color: #007bff;
-            text-decoration: none;
-            border-radius: 5px;
-            transition: background-color 0.3s ease, transform 0.3s ease;
-            margin: 10px;
-        }
-        .button:hover {
-            background-color: #0056b3;
-            transform: translateY(-3px);
-        }
-        .social-links {
-            margin-top: 20px;
-        }
-        .social-links a {
-            margin: 0 10px;
-            color: #007bff;
-            font-size: 24px;
-            transition: color 0.3s ease, transform 0.3s ease;
-        }
-        .social-links a:hover {
-            color: #0056b3;
-            transform: translateY(-3px);
-        }
-        .language-switcher {
-            margin-top: 20px;
-        }
-        .language-switcher button {
-            padding: 10px 20px;
-            margin: 0 5px;
-            font-size: 16px;
-            cursor: pointer;
-            background-color: #007bff;
-            color: #fff;
-            border: none;
-            border-radius: 5px;
-            transition: background-color 0.3s ease, transform 0.3s ease;
-        }
-        .language-switcher button:hover {
-            background-color: #0056b3;
-            transform: translateY(-3px);
-        }
-        .folders {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            margin-top: 30px;
-        }
-        .folder {
-            position: relative; /* Add this line */
-            width: 200px;
-            margin: 10px;
-            padding: 20px;
-            background: #fff;
-            border: 2px solid #ddd;
-            border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            text-align: center;
-            cursor: pointer;
-        }
-        .folder:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-        }
-        .folder-icon {
-            font-size: 50px;
-            color: #007bff;
-            margin-bottom: 10px;
-        }
-        .folder h3 {
-            margin: 10px 0;
-            font-size: 1.2em;
-            color: #333;
-        }
-        .update-dot {
-            position: absolute;
-            top: 10px;
-            right: 10px;
-            width: 10px;
-            height: 10px;
-            background-color: red;
-            border-radius: 50%;
-        }
-        .online-users {
-            margin-top: 20px;
-            display: flex;
-            justify-content: center;
-        }
-        .visitor-counter {
-            padding: 10px;
-            background: #fff;
-            border: 1px solid #ddd;
-            border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        }
-        footer {
-            background: rgba(0, 0, 0, 0.7);
-            color: #fff;
-            text-align: center;
-            padding: 1px 0;
-            margin-top: 10px;
-        }
-        footer p {
-            margin: 5px 0;
-        }
-        a {
-            color: #007bff;
-            text-decoration: none;
-        }
-        a:hover {
-            text-decoration: underline;
-        }
-    </style>
-    <script>
-        function switchLanguage(lang) {
-            const elements = document.querySelectorAll('[data-lang]');
-            elements.forEach(element => {
-                if (element.getAttribute('data-lang') === lang) {
-                    element.style.display = 'block';
-                } else {
-                    element.style.display = 'none';
-                }
-            });
-        }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-        document.addEventListener('DOMContentLoaded', function() {
-            switchLanguage('en'); // Default language
-            var email = '&#52;&#114;&#114;&#100;&#99;&#121;&#102;&#100;&#118;&#64;&#109;&#111;&#122;&#109;&#97;&#105;&#108;&#46;&#99;&#111;&#109;';
-            var emailContainers = document.querySelectorAll('.email');
-            emailContainers.forEach(function(container) {
-                container.innerHTML = '<a href="mailto:' + email + '">' + email + '</a>';
-            });
-        });
-    </script>
+<!-- Language bootstrap. Runs before first paint so a visitor who chose BM
+     never sees the English source text flash on a page change. -->
+<script>
+(function () {
+  var l;
+  try { l = localStorage.getItem("sim-lang"); } catch (e) { /* private mode */ }
+  if (l !== "en" && l !== "ms") {
+    var n = (navigator.language || "en").toLowerCase();
+    l = (n.indexOf("ms") === 0 || n.indexOf("id") === 0) ? "ms" : "en";
+  }
+  var d = document.documentElement;
+  d.lang = l;
+  d.setAttribute("data-lang", l);
+  if (l !== "en") {
+    d.classList.add("i18n-pending");
+    setTimeout(function () { d.classList.remove("i18n-pending"); }, 1500);
+  }
+})();
+</script>
+
+<title>Scammer Info Malaysia — One documented scam case, in full</title>
+<meta name="description" content="Scammer Info Malaysia publishes the complete record of one documented Malaysian fraud case: Mega Maju Resources / Masrizal bin Mohd Yusof, RM16,500, backed by receipts, documents and a police report.">
+<meta name="theme-color" content="#070b14">
+
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Scammer Info Malaysia">
+<meta property="og:title" content="Scammer Info Malaysia — One documented scam case, in full">
+<meta property="og:description" content="RM16,500 taken on a promise to build a studio house in Setiu, Terengganu. The company, the individual, the money trail and every piece of evidence — published in the public interest.">
+<meta property="og:image" content="https://www.scammerinfomalaysia.com/logo.webp">
+<meta property="og:url" content="https://www.scammerinfomalaysia.com/">
+<meta name="twitter:card" content="summary_large_image">
+
+<link rel="canonical" href="https://www.scammerinfomalaysia.com/">
+<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+<link rel="manifest" href="site.webmanifest">
+<link rel="shortcut icon" href="favicon.ico">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap">
+<link rel="stylesheet" href="assets/css/site.css">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "Scammer Info Malaysia",
+  "url": "https://www.scammerinfomalaysia.com",
+  "inLanguage": ["en", "ms"],
+  "description": "A public-interest record of one documented fraud case in Malaysia.",
+  "publisher": {
+    "@type": "Organization",
+    "name": "Scammer Info Malaysia",
+    "logo": { "@type": "ImageObject", "url": "https://www.scammerinfomalaysia.com/logo.webp" },
+    "contactPoint": { "@type": "ContactPoint", "contactType": "editorial", "url": "https://www.scammerinfomalaysia.com/faq.html" }
+  }
+}
+</script>
+
+<script>
+window.PAGE_I18N = {
+  en: {
+    "page.title": "Scammer Info Malaysia — One documented scam case, in full",
+    "hero.badge": "Active warning · 1 open case",
+    "hero.h1a": "One scam case.",
+    "hero.h1b": "Documented in full.",
+    "hero.lead": "This site exists for a single purpose — to publish the complete record of one Malaysian fraud case. The company, the individual, the money trail and every supporting document, so the next person can check before they pay.",
+    "hero.cta1": "Open the case file",
+    "hero.cta2": "How to report a scam",
+    "hero.trust": "Backed by a police report, bank receipts and 95 chat screenshots.",
+
+    "tick.status": "Case still open",
+    "tick.ssm": "SSM status: expired",
+    "tick.loss": "Loss: RM16,500",
+
+    "stat.loss": "Confirmed loss",
+    "stat.shots": "Chat screenshots",
+    "stat.docs": "Documents & receipts",
+    "stat.police": "Police report",
+
+    "case.id": "Case 01 · Malaysia",
+    "case.person": "Masrizal bin Mohd Yusof",
+    "case.f1": "Type of scam",
+    "case.v1": "Studio house construction contract",
+    "case.f2": "Location",
+    "case.f3": "Amount lost",
+    "case.f4": "Period",
+    "case.v4": "Dec 2023 – Apr 2024",
+    "case.f5": "Company status",
+    "case.v5": "Expired (SSM)",
+    "case.f6": "Case status",
+    "case.v6": "Open · no response",
+    "case.cta": "Read the full case",
+
+    "trail.eyebrow": "Inside the file",
+    "trail.h2": "Three trails, one conclusion",
+    "trail.lead": "Everything published on the case page is evidence the victim actually holds. Nothing is summarised away — you can open each document yourself.",
+    "trail.money.t": "The money trail",
+    "trail.money.b": "Three bank transfers to the same Hong Leong Bank account, each with a downloadable receipt.",
+    "trail.paper.t": "The paper trail",
+    "trail.paper.b": "Agreement, quotation, bill of quantities, progress schedule, specification and offer letter — seven documents in all, with victim details redacted.",
+    "trail.chat.t": "The chat trail",
+    "trail.chat.b": "95 WhatsApp screenshots running from the first promise to the last unanswered message.",
+    "trail.total": "Total taken",
+    "trail.p1": "First payment",
+    "trail.p2": "Second payment",
+    "trail.p3": "Third payment",
+
+    "flags.eyebrow": "Learn from it",
+    "flags.h2": "Six warning signs from this case",
+    "flags.lead": "Every one of these appeared in this case before the money was gone. If you see the same pattern, stop and verify.",
+    "flags.1t": "Large payment before any work starts",
+    "flags.1b": "RM8,000 was transferred before a single thing happened on site. Tie payments to work you can physically inspect.",
+    "flags.2t": "A company whose registration has lapsed",
+    "flags.2b": "The SSM status here reads EXPIRED. Registration numbers are free to check — do it before signing anything.",
+    "flags.3t": "No application at the local council",
+    "flags.3b": "A check with Majlis Daerah Setiu confirmed no submission was ever made under the victim's name or land lot.",
+    "flags.4t": "The same excuse, over and over",
+    "flags.4b": "After each payment, the answer was that he was unwell. Repeated delays with no documents attached are a pattern, not bad luck.",
+    "flags.5t": "Still active online, silent with you",
+    "flags.5b": "The individual continued posting and arguing publicly on Facebook while messages from the victim went unanswered.",
+    "flags.6t": "A bank account with a report against it",
+    "flags.6b": "The receiving account already had a report filed. Semak Mule lets you check any account or phone number in seconds — free.",
+
+    "help.eyebrow": "If it already happened",
+    "help.h2": "What to do, in order",
+    "help.1t": "Call 997 immediately",
+    "help.1b": "The National Scam Response Centre operates a 24-hour line. Call as soon as you realise — acting fast gives the banks the best chance of holding the funds.",
+    "help.2t": "Make a police report",
+    "help.2b": "Bring your transfer receipts, the full chat history, and every document you signed. A report is what turns your case into something that can be investigated.",
+    "help.3t": "Check before the next payment",
+    "help.3b": "Run the account number and phone number through Semak Mule, and verify the company registration with SSM. Both are free and take under a minute.",
+    "help.mule": "Open Semak Mule",
+
+    "add.h2": "Have information about this case?",
+    "add.p": "If you dealt with the same company or individual, or you spot something on this site that is inaccurate, we want to hear from you. Corrections are made as soon as they are verified.",
+    "add.cta": "Read the FAQ first"
+  },
+  ms: {
+    "page.title": "Scammer Info Malaysia — Satu kes penipuan, didokumentasi sepenuhnya",
+    "hero.badge": "Amaran aktif · 1 kes terbuka",
+    "hero.h1a": "Satu kes penipuan.",
+    "hero.h1b": "Didedahkan sepenuhnya.",
+    "hero.lead": "Laman ini wujud untuk satu tujuan sahaja — menerbitkan rekod lengkap satu kes penipuan di Malaysia. Syarikatnya, individunya, jejak wangnya dan setiap dokumen sokongan, supaya orang seterusnya boleh menyemak sebelum membayar.",
+    "hero.cta1": "Buka fail kes",
+    "hero.cta2": "Cara buat laporan",
+    "hero.trust": "Disokong laporan polis, resit bank dan 95 tangkapan skrin perbualan.",
+
+    "tick.status": "Kes masih terbuka",
+    "tick.ssm": "Status SSM: tamat tempoh",
+    "tick.loss": "Kerugian: RM16,500",
+
+    "stat.loss": "Kerugian disahkan",
+    "stat.shots": "Tangkapan skrin",
+    "stat.docs": "Dokumen & resit",
+    "stat.police": "Laporan polis",
+
+    "case.id": "Kes 01 · Malaysia",
+    "case.person": "Masrizal bin Mohd Yusof",
+    "case.f1": "Jenis penipuan",
+    "case.v1": "Kontrak pembinaan rumah studio",
+    "case.f2": "Lokasi",
+    "case.f3": "Jumlah kerugian",
+    "case.f4": "Tempoh",
+    "case.v4": "Dis 2023 – Apr 2024",
+    "case.f5": "Status syarikat",
+    "case.v5": "Tamat tempoh (SSM)",
+    "case.f6": "Status kes",
+    "case.v6": "Terbuka · tiada respons",
+    "case.cta": "Baca kes penuh",
+
+    "trail.eyebrow": "Isi kandungan fail",
+    "trail.h2": "Tiga jejak, satu kesimpulan",
+    "trail.lead": "Semua yang diterbitkan di halaman kes adalah bukti yang benar-benar dipegang mangsa. Tiada apa yang diringkaskan — anda boleh buka setiap dokumen sendiri.",
+    "trail.money.t": "Jejak wang",
+    "trail.money.b": "Tiga pindahan bank ke akaun Hong Leong Bank yang sama, setiap satu dengan resit yang boleh dimuat turun.",
+    "trail.paper.t": "Jejak dokumen",
+    "trail.paper.b": "Perjanjian, sebut harga, BQ, jadual progres, spesifikasi dan surat tawaran — tujuh dokumen kesemuanya, dengan maklumat mangsa dipadamkan.",
+    "trail.chat.t": "Jejak perbualan",
+    "trail.chat.b": "95 tangkapan skrin WhatsApp, dari janji pertama sehingga mesej terakhir yang tidak berbalas.",
+    "trail.total": "Jumlah diambil",
+    "trail.p1": "Bayaran pertama",
+    "trail.p2": "Bayaran kedua",
+    "trail.p3": "Bayaran ketiga",
+
+    "flags.eyebrow": "Ambil iktibar",
+    "flags.h2": "Enam tanda amaran daripada kes ini",
+    "flags.lead": "Setiap satu daripadanya muncul dalam kes ini sebelum wang lesap. Jika anda nampak corak yang sama, berhenti dan buat semakan.",
+    "flags.1t": "Bayaran besar sebelum kerja bermula",
+    "flags.1b": "RM8,000 dipindahkan sebelum apa-apa berlaku di tapak. Ikat setiap bayaran kepada kerja yang boleh anda periksa sendiri.",
+    "flags.2t": "Syarikat yang pendaftarannya sudah luput",
+    "flags.2b": "Status SSM di sini tertera TAMAT TEMPOH. Nombor pendaftaran boleh disemak secara percuma — buat sebelum tandatangan apa-apa.",
+    "flags.3t": "Tiada permohonan di majlis tempatan",
+    "flags.3b": "Semakan di Majlis Daerah Setiu mengesahkan tiada permohonan pernah dibuat atas nama atau lot tanah mangsa.",
+    "flags.4t": "Alasan yang sama, berulang kali",
+    "flags.4b": "Selepas setiap bayaran, jawapannya dia sedang sakit. Kelewatan berulang tanpa sebarang dokumen adalah satu corak, bukan nasib malang.",
+    "flags.5t": "Masih aktif dalam talian, tapi senyap dengan anda",
+    "flags.5b": "Individu ini terus menulis dan berbalah secara terbuka di Facebook sementara mesej mangsa langsung tidak dibalas.",
+    "flags.6t": "Akaun bank yang sudah ada laporan",
+    "flags.6b": "Akaun penerima itu sudah mempunyai laporan difailkan. Semak Mule membolehkan anda menyemak mana-mana akaun atau nombor telefon dalam beberapa saat — percuma.",
+
+    "help.eyebrow": "Jika ia sudah berlaku",
+    "help.h2": "Apa perlu dibuat, mengikut urutan",
+    "help.1t": "Hubungi 997 dengan segera",
+    "help.1b": "Pusat Respons Penipuan Nasional beroperasi 24 jam. Hubungi sebaik anda sedar — bertindak pantas memberi pihak bank peluang terbaik untuk menahan wang tersebut.",
+    "help.2t": "Buat laporan polis",
+    "help.2b": "Bawa resit pindahan, sejarah perbualan penuh, dan setiap dokumen yang anda tandatangani. Laporan inilah yang menjadikan kes anda boleh disiasat.",
+    "help.3t": "Semak sebelum bayaran seterusnya",
+    "help.3b": "Semak nombor akaun dan nombor telefon melalui Semak Mule, dan sahkan pendaftaran syarikat dengan SSM. Kedua-duanya percuma dan mengambil masa kurang seminit.",
+    "help.mule": "Buka Semak Mule",
+
+    "add.h2": "Ada maklumat mengenai kes ini?",
+    "add.p": "Jika anda pernah berurusan dengan syarikat atau individu yang sama, atau anda dapati sesuatu di laman ini tidak tepat, kami ingin mendengarnya. Pembetulan dibuat sebaik sahaja ia disahkan.",
+    "add.cta": "Baca soalan lazim dahulu"
+  }
+};
+</script>
+<script src="assets/js/site.js" defer></script>
 </head>
+
 <body>
-    <div id="fb-root"></div>
-    <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v12.0"></script>
+<a class="skip-link" href="#main">Skip to content</a>
 
-    <video autoplay muted loop class="video-background">
-        <source src="scam.mp4" type="video/mp4">
-    </video>
-    <header>
-        <div class="container">
-            <img src="logo.webp" alt="Scammer Info Malaysia Logo">
-            <h1>Scammer Info Malaysia</h1>
-            <ul class="navbar">
-                <li><a href="index.html" data-lang="en">Home</a><a href="index.html" data-lang="ms" style="display:none;">Laman Utama</a></li>
-                <li><a href="faq.html" data-lang="en">FAQ</a><a href="faq.html" data-lang="ms" style="display:none;">Soalan Lazim</a></li>
-                <li><a href="links.html" data-lang="en">Important Links</a><a href="links.html" data-lang="ms" style="display:none;">Pautan Penting</a></li>
-                <li><a href="PrivacyPolicy.html" data-lang="en">Privacy Policy</a><a href="PrivacyPolicy.html" data-lang="ms" style="display:none;">Privacy Policy</a></li>
-            </ul>
-            <div class="language-switcher">
-                <button onclick="switchLanguage('en')">English</button>
-                <button onclick="switchLanguage('ms')">Malay</button>
-            </div>
-        </div>
-    </header>
-    <div class="container">
-        <div class="main-content">
-            <div data-lang="en">
-                <h2>Welcome to Scammer Info Malaysia</h2>
-                <p>Scammer Info Malaysia is a platform dedicated to warning and spreading information about scams in Malaysia.</p>
-                <p>Our goal is to help people identify and avoid becoming victims of scams.</p>
-                <p>🔍 Click the button below to view more information about known scammers.</p>
-            </div>
-            <div data-lang="ms" style="display:none;">
-                <h2>Selamat Datang ke Scammer Info Malaysia</h2>
-                <p>Scammer Info Malaysia adalah platform untuk memberi amaran dan menyebarkan maklumat mengenai penipuan di Malaysia.</p>
-                <p>Matlamat kami adalah untuk membantu orang ramai mengenal pasti dan mengelakkan diri daripada menjadi mangsa penipuan.</p>
-                <p>🔍 Klik butang di bawah untuk melihat maklumat lanjut mengenai penipu yang dikenali.</p>
-            </div>
+<header class="topbar">
+  <div class="topbar__inner">
+    <a class="brand" href="index.html">
+      <img src="assets/img/logo-sm.webp" alt="" width="38" height="38">
+      <span class="brand__name">Scammer Info Malaysia
+        <span class="brand__tag" data-i18n="brand.tag">Scam awareness · Malaysia</span>
+      </span>
+    </a>
 
-            <div class="folders">
-                <div class="folder" onclick="window.location.href='mmr/index.html'">
-                    <i class="fas fa-folder folder-icon"></i>
-					<span class="update-dot"></span>
-                    <h3 data-lang="en">Case 1: Mega Maju Resources</h3>
-                    <h3 data-lang="ms" style="display:none;">Kes 1: Mega Maju Resources</h3>
-                </div>
-                <div class="folder" onclick="window.location.href='index.html'">
-                    <i class="fas fa-folder folder-icon"></i>
-                    <h3 data-lang="en">Case 2: Coming Soon</h3>
-                    <h3 data-lang="ms" style="display:none;">Kes 2: Akan Datang</h3>
-                </div>
-                <!-- Add more folders as needed -->
-            </div>
-            <div class="social-links">
-                <a href="https://www.facebook.com/profile.php?id=61562121987884" target="_blank" aria-label="Facebook">
-                    <i class="fab fa-facebook"></i>
-                </a>
-            </div>
-        </div>
+    <nav class="nav" id="primary-nav">
+      <a href="index.html" data-i18n="nav.home">Home</a>
+      <a href="mmr/index.html" data-i18n="nav.case">The Case</a>
+      <a href="faq.html" data-i18n="nav.faq">FAQ</a>
+      <a href="links.html" data-i18n="nav.links">Report &amp; Help</a>
+      <a href="PrivacyPolicy.html" data-i18n="nav.privacy">Privacy &amp; Legal</a>
+    </nav>
+
+    <div class="lang" role="group" aria-label="Language">
+      <button type="button" data-lang="en" aria-pressed="true">EN</button>
+      <button type="button" data-lang="ms" aria-pressed="false">BM</button>
     </div>
-    <footer>
-        <p data-lang="en">&copy; 2024 Scammer Info Malaysia. All Rights Reserved.</p>
-        <p data-lang="ms" style="display:none;">&copy; 2024 Scammer Info Malaysia. Semua Hak Cipta Terpelihara.</p>
-        <p data-lang="en">📧 Contact us at: <span class="email"></span> if there is any inaccurate information or if you want to add cases to this site. Thank you! 🌟</p>
-        <p data-lang="ms" style="display:none;">📧 Hubungi kami di: <span class="email"></span> sekiranya terdapat maklumat yang tidak tepat atau jika anda ingin menambah kes pada laman ini. Terima kasih! 🌟</p>
-    </footer>
+
+    <button type="button" class="nav-toggle" aria-expanded="false" aria-controls="primary-nav" data-i18n-aria="menu" aria-label="Menu"></button>
+  </div>
+</header>
+
+<main id="main">
+
+  <!-- ===================================================== hero -->
+  <section class="hero">
+    <div class="hero__media">
+      <video muted loop playsinline preload="none" data-video-src="scam.mp4" aria-hidden="true"></video>
+    </div>
+
+    <div class="wrap hero__grid">
+      <div>
+        <span class="alert-badge">
+          <span class="dot dot--pulse"></span>
+          <span data-i18n="hero.badge">Active warning · 1 open case</span>
+        </span>
+
+        <h1>
+          <span data-i18n="hero.h1a">One scam case.</span><br>
+          <span class="accent" data-i18n="hero.h1b">Documented in full.</span>
+        </h1>
+
+        <p class="lead" data-i18n="hero.lead">This site exists for a single purpose — to publish the complete record of one Malaysian fraud case.</p>
+
+        <div class="btn-row">
+          <a class="btn btn--primary" href="mmr/index.html">
+            <span data-i18n="hero.cta1">Open the case file</span>
+            <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+          <a class="btn btn--ghost" href="links.html" data-i18n="hero.cta2">How to report a scam</a>
+        </div>
+
+        <p class="small muted mt-2" style="max-width:46ch" data-i18n="hero.trust">Backed by a police report, bank receipts and 95 chat screenshots.</p>
+      </div>
+
+      <!-- case spotlight -->
+      <article class="case-card reveal">
+        <div class="case-card__head">
+          <img class="case-card__logo" src="assets/img/mmr-logo.png" alt="Mega Maju Resources logo" width="66" height="66">
+          <div>
+            <span class="case-card__id" data-i18n="case.id">Case 01 · Malaysia</span>
+            <h2 class="case-card__title">Mega Maju Resources</h2>
+            <p class="case-card__sub" data-i18n="case.person">Masrizal bin Mohd Yusof</p>
+          </div>
+        </div>
+
+        <div class="case-card__body">
+          <dl class="facts">
+            <div><dt data-i18n="case.f1">Type of scam</dt><dd data-i18n="case.v1">Studio house construction contract</dd></div>
+            <div><dt data-i18n="case.f2">Location</dt><dd>Setiu, Terengganu</dd></div>
+            <div><dt data-i18n="case.f3">Amount lost</dt><dd class="is-red">RM16,500</dd></div>
+            <div><dt data-i18n="case.f4">Period</dt><dd data-i18n="case.v4">Dec 2023 – Apr 2024</dd></div>
+            <div><dt data-i18n="case.f5">Company status</dt><dd data-i18n="case.v5">Expired (SSM)</dd></div>
+            <div><dt data-i18n="case.f6">Case status</dt><dd data-i18n="case.v6">Open · no response</dd></div>
+          </dl>
+
+          <a class="btn btn--primary btn--block" href="mmr/index.html" data-i18n="case.cta">Read the full case</a>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- ===================================================== ticker -->
+  <div class="ticker" aria-hidden="true">
+    <div class="ticker__track">
+      <div class="ticker__group">
+        <span class="ticker__item">Mega Maju Resources</span>
+        <span class="ticker__item">Masrizal bin Mohd Yusof</span>
+        <span class="ticker__item" data-i18n="tick.loss">Loss: RM16,500</span>
+        <span class="ticker__item" data-i18n="tick.ssm">SSM status: expired</span>
+        <span class="ticker__item">Hong Leong Bank · 05101010884</span>
+        <span class="ticker__item" data-i18n="tick.status">Case still open</span>
+      </div>
+      <div class="ticker__group">
+        <span class="ticker__item">Mega Maju Resources</span>
+        <span class="ticker__item">Masrizal bin Mohd Yusof</span>
+        <span class="ticker__item" data-i18n="tick.loss">Loss: RM16,500</span>
+        <span class="ticker__item" data-i18n="tick.ssm">SSM status: expired</span>
+        <span class="ticker__item">Hong Leong Bank · 05101010884</span>
+        <span class="ticker__item" data-i18n="tick.status">Case still open</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===================================================== stats -->
+  <section class="section--tight">
+    <div class="wrap">
+      <div class="stats reveal">
+        <div class="stat stat--red">
+          <span class="stat__num" data-count="16500" data-prefix="RM">RM16,500</span>
+          <span class="stat__label" data-i18n="stat.loss">Confirmed loss</span>
+        </div>
+        <div class="stat">
+          <span class="stat__num" data-count="95">95</span>
+          <span class="stat__label" data-i18n="stat.shots">Chat screenshots</span>
+        </div>
+        <div class="stat">
+          <span class="stat__num" data-count="10">10</span>
+          <span class="stat__label" data-i18n="stat.docs">Documents &amp; receipts</span>
+        </div>
+        <div class="stat">
+          <span class="stat__num" data-count="1">1</span>
+          <span class="stat__label" data-i18n="stat.police">Police report</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================================================== three trails -->
+  <section class="section" id="evidence">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <span class="eyebrow" data-i18n="trail.eyebrow">Inside the file</span>
+        <h2 data-i18n="trail.h2">Three trails, one conclusion</h2>
+        <p class="lead" data-i18n="trail.lead">Everything published on the case page is evidence the victim actually holds.</p>
+      </div>
+
+      <div class="grid grid--3">
+        <a class="card card--hover reveal" href="mmr/index.html#money" style="text-decoration:none;color:inherit">
+          <span class="card__icon">
+            <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 1v22M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </span>
+          <h3 data-i18n="trail.money.t">The money trail</h3>
+          <p data-i18n="trail.money.b">Three bank transfers to the same account, each with a downloadable receipt.</p>
+        </a>
+
+        <a class="card card--hover reveal" data-delay="90" href="mmr/index.html#documents" style="text-decoration:none;color:inherit">
+          <span class="card__icon is-blue">
+            <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="M14 2v6h6M9 13h6M9 17h6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+          </span>
+          <h3 data-i18n="trail.paper.t">The paper trail</h3>
+          <p data-i18n="trail.paper.b">Seven documents in all, with victim details redacted.</p>
+        </a>
+
+        <a class="card card--hover reveal" data-delay="180" href="mmr/index.html#chats" style="text-decoration:none;color:inherit">
+          <span class="card__icon is-green">
+            <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M21 11.5a8.4 8.4 0 0 1-9 8.4 8.6 8.6 0 0 1-3.8-.9L3 21l2-4.9A8.4 8.4 0 0 1 12 3a8.4 8.4 0 0 1 9 8.5z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </span>
+          <h3 data-i18n="trail.chat.t">The chat trail</h3>
+          <p data-i18n="trail.chat.b">95 WhatsApp screenshots from the first promise to the last unanswered message.</p>
+        </a>
+      </div>
+
+      <!-- money trail detail -->
+      <div class="card card--pad-lg mt-3 reveal">
+        <div class="trail">
+          <div class="trail__row">
+            <span class="trail__step">1</span>
+            <span><strong data-i18n="trail.p1">First payment</strong><br><span class="trail__date">27 Dec 2023 · 11:28 PM</span></span>
+            <span class="trail__amt">RM8,000</span>
+          </div>
+          <div class="trail__row">
+            <span class="trail__step">2</span>
+            <span><strong data-i18n="trail.p2">Second payment</strong><br><span class="trail__date">09 Feb 2024 · 02:26 PM</span></span>
+            <span class="trail__amt">RM2,500</span>
+          </div>
+          <div class="trail__row">
+            <span class="trail__step">3</span>
+            <span><strong data-i18n="trail.p3">Third payment</strong><br><span class="trail__date">06 Apr 2024 · 10:34 AM</span></span>
+            <span class="trail__amt">RM6,000</span>
+          </div>
+          <div class="trail__total">
+            <span data-i18n="trail.total">Total taken</span>
+            <span>RM16,500</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================================================== red flags -->
+  <section class="section" id="warning-signs">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <span class="eyebrow" data-i18n="flags.eyebrow">Learn from it</span>
+        <h2 data-i18n="flags.h2">Six warning signs from this case</h2>
+        <p class="lead" data-i18n="flags.lead">Every one of these appeared before the money was gone.</p>
+      </div>
+
+      <div class="grid grid--3">
+        <div class="card card--hover reveal">
+          <span class="card__icon"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 9v4m0 4h.01M10.3 3.9 1.8 18a2 2 0 0 0 1.7 3h17a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+          <h3 data-i18n="flags.1t">Large payment before any work starts</h3>
+          <p data-i18n="flags.1b">RM8,000 was transferred before a single thing happened on site.</p>
+        </div>
+        <div class="card card--hover reveal" data-delay="70">
+          <span class="card__icon"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M3 21h18M5 21V7l7-4 7 4v14M9 21v-5h6v5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+          <h3 data-i18n="flags.2t">A company whose registration has lapsed</h3>
+          <p data-i18n="flags.2b">The SSM status here reads EXPIRED.</p>
+        </div>
+        <div class="card card--hover reveal" data-delay="140">
+          <span class="card__icon"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M9 11l3 3L22 4M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+          <h3 data-i18n="flags.3t">No application at the local council</h3>
+          <p data-i18n="flags.3b">A check with Majlis Daerah Setiu confirmed no submission was ever made.</p>
+        </div>
+        <div class="card card--hover reveal">
+          <span class="card__icon"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="2"/><path d="M12 7v5l3 2" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+          <h3 data-i18n="flags.4t">The same excuse, over and over</h3>
+          <p data-i18n="flags.4b">After each payment, the answer was that he was unwell.</p>
+        </div>
+        <div class="card card--hover reveal" data-delay="70">
+          <span class="card__icon"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9zM13.7 21a2 2 0 0 1-3.4 0" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+          <h3 data-i18n="flags.5t">Still active online, silent with you</h3>
+          <p data-i18n="flags.5b">He continued posting publicly while messages from the victim went unanswered.</p>
+        </div>
+        <div class="card card--hover reveal" data-delay="140">
+          <span class="card__icon"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="2" y="5" width="20" height="14" rx="2" stroke="currentColor" stroke-width="2"/><path d="M2 10h20" stroke="currentColor" stroke-width="2"/></svg></span>
+          <h3 data-i18n="flags.6t">A bank account with a report against it</h3>
+          <p data-i18n="flags.6b">The receiving account already had a report filed against it.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================================================== what to do -->
+  <section class="section" id="help">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <span class="eyebrow is-blue" data-i18n="help.eyebrow">If it already happened</span>
+        <h2 data-i18n="help.h2">What to do, in order</h2>
+      </div>
+
+      <div class="grid grid--3">
+        <div class="card card--hover reveal">
+          <span class="card__icon"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+          <h3 data-i18n="help.1t">Call 997 immediately</h3>
+          <p data-i18n="help.1b">The National Scam Response Centre operates a 24-hour line.</p>
+        </div>
+        <div class="card card--hover reveal" data-delay="90">
+          <span class="card__icon is-blue"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="M9 12l2 2 4-4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+          <h3 data-i18n="help.2t">Make a police report</h3>
+          <p data-i18n="help.2b">Bring your receipts, the full chat history, and every document you signed.</p>
+        </div>
+        <div class="card card--hover reveal" data-delay="180">
+          <span class="card__icon is-green"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="11" cy="11" r="7" stroke="currentColor" stroke-width="2"/><path d="m20 20-3.5-3.5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span>
+          <h3 data-i18n="help.3t">Check before the next payment</h3>
+          <p data-i18n="help.3b">Run the account and phone number through Semak Mule.</p>
+          <div class="btn-row mt-2">
+            <a class="btn btn--ghost btn--sm" href="https://semakmule.rmp.gov.my/" target="_blank" rel="noopener noreferrer" data-i18n="help.mule">Open Semak Mule</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="sos mt-3 reveal">
+        <div>
+          <h2 data-i18n="sos.h2">Just been scammed? Do not wait.</h2>
+          <p data-i18n="sos.p">The National Scam Response Centre answers 24 hours a day.</p>
+        </div>
+        <a class="sos__num" href="tel:997">
+          <b>997</b>
+          <span data-i18n="sos.label">NSRC hotline</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================================================== contribute -->
+  <section class="section--tight" style="padding-bottom:clamp(3rem,7vw,5rem)">
+    <div class="wrap">
+      <div class="card card--pad-lg reveal" style="text-align:center">
+        <h2 style="font-size:clamp(1.3rem,3vw,1.8rem)" data-i18n="add.h2">Have information about this case?</h2>
+        <p class="lead" style="margin-inline:auto;max-width:60ch" data-i18n="add.p">If you dealt with the same company or individual, we want to hear from you.</p>
+        <p class="mt-2" style="font-size:1.05rem">📧 <span class="email"></span></p>
+        <div class="btn-row mt-1" style="justify-content:center">
+          <a class="btn btn--ghost btn--sm" href="faq.html" data-i18n="add.cta">Read the FAQ first</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="footer">
+  <div class="wrap">
+    <div class="footer__grid">
+      <div>
+        <a class="brand" href="index.html" style="margin-bottom:1rem">
+          <img src="assets/img/logo-sm.webp" alt="" width="38" height="38">
+          <span class="brand__name">Scammer Info Malaysia</span>
+        </a>
+        <p data-i18n="foot.about.body">An independent public-interest record of a documented fraud case in Malaysia.</p>
+        <div class="social mt-2">
+          <a href="https://www.facebook.com/profile.php?id=61562121987884" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M22 12a10 10 0 1 0-11.6 9.9v-7H7.9V12h2.5V9.8c0-2.5 1.5-3.9 3.8-3.9 1.1 0 2.2.2 2.2.2v2.5h-1.3c-1.2 0-1.6.8-1.6 1.6V12h2.8l-.4 2.9h-2.3v7A10 10 0 0 0 22 12z"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <div>
+        <h4 data-i18n="foot.nav.title">Pages</h4>
+        <ul>
+          <li><a href="index.html" data-i18n="nav.home">Home</a></li>
+          <li><a href="mmr/index.html" data-i18n="nav.case">The Case</a></li>
+          <li><a href="faq.html" data-i18n="nav.faq">FAQ</a></li>
+          <li><a href="links.html" data-i18n="nav.links">Report &amp; Help</a></li>
+          <li><a href="PrivacyPolicy.html" data-i18n="nav.privacy">Privacy &amp; Legal</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4 data-i18n="foot.help.title">Get help now</h4>
+        <ul>
+          <li><a href="tel:997" data-i18n="foot.help.nsrc">NSRC hotline 997</a></li>
+          <li><a href="https://semakmule.rmp.gov.my/" target="_blank" rel="noopener noreferrer" data-i18n="foot.help.mule">Semak Mule</a></li>
+          <li><a href="https://www.rmp.gov.my/" target="_blank" rel="noopener noreferrer" data-i18n="foot.help.police">Royal Malaysia Police</a></li>
+        </ul>
+        <p class="small mt-2" data-i18n="foot.contact">Spotted an error? Email us.</p>
+        <p class="small">📧 <span class="email"></span></p>
+      </div>
+    </div>
+
+    <div class="footer__bottom">
+      <span data-i18n="foot.rights">© 2024–2026 Scammer Info Malaysia. All rights reserved.</span>
+      <span class="small" style="max-width:52ch" data-i18n="foot.disclaimer">Published in the public interest.</span>
+    </div>
+  </div>
+</footer>
+
+<button type="button" class="to-top" data-i18n-aria="top" aria-label="Back to top"></button>
 </body>
 </html>
